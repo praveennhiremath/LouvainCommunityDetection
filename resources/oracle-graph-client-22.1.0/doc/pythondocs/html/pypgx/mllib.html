@@ -1,0 +1,1970 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MLlib &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Authorization and Permissions" href="auth.html" />
+    <link rel="prev" title="API package" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opg4py/detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opg4py/index.html">OPG4Py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailed/index.html">Using PyPGX</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PyPGX package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="top_level.html">Top level package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">API package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MLlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">Authorization and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Graph Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frames.html">Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redaction.html">Redaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pg_rdbms.html">Graph Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">PyPGX package</a> &raquo;</li>
+        
+      <li>MLlib</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/pypgx/mllib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pypgx.api.mllib">
+<span id="mllib"></span><h1>MLlib<a class="headerlink" href="#module-pypgx.api.mllib" title="Permalink to this headline">¶</a></h1>
+<p>Graph machine learning tools for use with PGX.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.CorruptionFunction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">CorruptionFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_corruption_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.CorruptionFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract Corruption Function which generate the corrupted subgraph for DGI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">DeepWalkModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_deepwalk_model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api._pgx_context_manager.PgxContextManager</span></code></p>
+<p>DeepWalk model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call destroy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel.compute_similars">
+<span class="sig-name descname"><span class="pre">compute_similars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel.compute_similars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the top-k similar vertices for a given vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – id of the vertex or list of vertex ids for which to compute the similar vertices</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – number of similar vertices to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy this model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a ModelStorer object which can be used to save the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ModelStorer object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib._model_utils.ModelStorer" title="pypgx.api.mllib._model_utils.ModelStorer">ModelStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model on a graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a>) – Graph to fit on</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the model in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path where to store the model</p></li>
+<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Encryption key</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Whether or not to overwrite pre-existing file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DeepWalkModel.trained_vectors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trained_vectors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><span class="pre">pypgx.api.frames._pgx_frame.PgxFrame</span></a></em><a class="headerlink" href="#pypgx.api.mllib.DeepWalkModel.trained_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the trained vertex vectors for the current DeepWalk model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame object with the trained vertex vectors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame">PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.DevNetLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">DevNetLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">confidence_margin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anomaly_property_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.DevNetLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api.mllib._loss_function.LossFunction</span></code></p>
+<p>Deviation loss for anomaly detection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>confidence_margin</strong> (<em>float</em>) – </p></li>
+<li><p><strong>anomaly_property_value</strong> (<em>bool</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GnnExplanation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">GnnExplanation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_gnn_explanation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GnnExplanation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GnnExplanation object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GnnExplanation.get_embedding">
+<span class="sig-name descname"><span class="pre">get_embedding</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GnnExplanation.get_embedding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the inferred embedding of the specified vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the embedding</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GnnExplanation.get_importance_graph">
+<span class="sig-name descname"><span class="pre">get_importance_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GnnExplanation.get_importance_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the importance Graph, that is, the computation graph with an additional vertex
+property indicating vertex importance. The additional importance property can be retrieved
+via get_vertex_importance_property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the importance graph</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph">PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GnnExplanation.get_vertex_feature_importance">
+<span class="sig-name descname"><span class="pre">get_vertex_feature_importance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GnnExplanation.get_vertex_feature_importance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the feature importances as a map from property to importance value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the feature importances.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[<a class="reference internal" href="api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a>, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GnnExplanation.get_vertex_importance_property">
+<span class="sig-name descname"><span class="pre">get_vertex_importance_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GnnExplanation.get_vertex_importance_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the vertex property that contains the computed vertex importance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the vertex importance property</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseConvLayerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">GraphWiseConvLayerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseConvLayerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GraphWise conv layer configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseDgiLayerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">GraphWiseDgiLayerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GraphWise dgi layer configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseDgiLayerConfig.get_corruption_function">
+<span class="sig-name descname"><span class="pre">get_corruption_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig.get_corruption_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the corruption function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.mllib.PermutationCorruption" title="pypgx.api.mllib._corruption_function.PermutationCorruption">pypgx.api.mllib._corruption_function.PermutationCorruption</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseDgiLayerConfig.get_discriminator">
+<span class="sig-name descname"><span class="pre">get_discriminator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig.get_discriminator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the discriminator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseDgiLayerConfig.get_readout_function">
+<span class="sig-name descname"><span class="pre">get_readout_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig.get_readout_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the readout function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseDgiLayerConfig.set_corruption_function">
+<span class="sig-name descname"><span class="pre">set_corruption_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">corruption_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig.set_corruption_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the corruption function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>corruption_function</strong> (<a class="reference internal" href="#pypgx.api.mllib.CorruptionFunction" title="pypgx.api.mllib.CorruptionFunction"><em>CorruptionFunction</em></a>) – the corruption function.
+Supported currently: <a class="reference internal" href="#pypgx.api.mllib.PermutationCorruption" title="pypgx.api.mllib.PermutationCorruption"><code class="xref py py-class docutils literal notranslate"><span class="pre">PermutationCorruption</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseDgiLayerConfig.set_discriminator">
+<span class="sig-name descname"><span class="pre">set_discriminator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">discriminator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig.set_discriminator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the discriminator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>discriminator</strong> (<em>str</em>) – The discriminator function.
+Supported currently: ‘BILINEAR’</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseDgiLayerConfig.set_readout_function">
+<span class="sig-name descname"><span class="pre">set_readout_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readout_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig.set_readout_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the readout function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>readout_function</strong> (<em>str</em>) – The readout function.
+Supported currently: ‘MEAN’</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">GraphWiseModelConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_graphwise_model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Graphwise Model Configuration class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.get_conv_layer_configs">
+<span class="sig-name descname"><span class="pre">get_conv_layer_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.get_conv_layer_configs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of conv layer configs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#pypgx.api.mllib.GraphWiseConvLayerConfig" title="pypgx.api.mllib._graphwise_conv_layer_config.GraphWiseConvLayerConfig">pypgx.api.mllib._graphwise_conv_layer_config.GraphWiseConvLayerConfig</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_batch_size">
+<span class="sig-name descname"><span class="pre">set_batch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the batch size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_size</strong> (<em>int</em>) – batch size</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_edge_input_feature_dim">
+<span class="sig-name descname"><span class="pre">set_edge_input_feature_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_input_feature_dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_edge_input_feature_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the edge input feature dimension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>edge_input_feature_dim</strong> (<em>int</em>) – edge input feature dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_embedding_dim">
+<span class="sig-name descname"><span class="pre">set_embedding_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding_dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_embedding_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the embedding dimension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>embedding_dim</strong> (<em>int</em>) – embedding dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_fitted">
+<span class="sig-name descname"><span class="pre">set_fitted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fitted</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_fitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the fitted flag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fitted</strong> (<em>bool</em>) – fitted flag</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_input_feature_dim">
+<span class="sig-name descname"><span class="pre">set_input_feature_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_feature_dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_input_feature_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the input feature dimension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_feature_dim</strong> (<em>int</em>) – input feature dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_learning_rate">
+<span class="sig-name descname"><span class="pre">set_learning_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_learning_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the learning rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>learning_rate</strong> (<em>int</em>) – initial learning rate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_num_epochs">
+<span class="sig-name descname"><span class="pre">set_num_epochs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_epochs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_num_epochs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of epochs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num_epochs</strong> (<em>int</em>) – number of epochs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_seed">
+<span class="sig-name descname"><span class="pre">set_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the seed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seed</strong> (<em>int</em>) – seed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_shuffle">
+<span class="sig-name descname"><span class="pre">set_shuffle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shuffle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_shuffle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the shuffling flag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shuffle</strong> (<em>bool</em>) – shuffling flag</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_standarize">
+<span class="sig-name descname"><span class="pre">set_standarize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">standardize</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_standarize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the standardize flag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>standardize</strong> (<em>bool</em>) – standardize flag</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWiseModelConfig.set_training_loss">
+<span class="sig-name descname"><span class="pre">set_training_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_loss</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWiseModelConfig.set_training_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the training loss</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>training_loss</strong> (<em>float</em>) – training loss</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.GraphWisePredictionLayerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">GraphWisePredictionLayerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.GraphWisePredictionLayerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GraphWise prediction layer configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.PermutationCorruption">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">PermutationCorruption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_permutation_corruption</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.PermutationCorruption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypgx.api.mllib.CorruptionFunction" title="pypgx.api.mllib._corruption_function.CorruptionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api.mllib._corruption_function.CorruptionFunction</span></code></a></p>
+<p>Permutation Function which shuffle the nodes to generate the corrupted subgraph for DGI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">Pg2vecModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pg2vec_model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api._pgx_context_manager.PgxContextManager</span></code></p>
+<p>Pg2Vec model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call destroy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.compute_similars">
+<span class="sig-name descname"><span class="pre">compute_similars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graphlet_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.compute_similars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the top-k similar graphlets for a list of input graphlets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graphlet_id</strong> (<em>Union</em><em>[</em><em>Iterable</em><em>[</em><em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>int</em><em>, </em><em>str</em><em>]</em>) – graphletIds or iterable of graphletIds</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – number of similars to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy this model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a ModelStore object which can be used to save the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ModelStore object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib._model_utils.ModelStorer" title="pypgx.api.mllib._model_utils.ModelStorer">pypgx.api.mllib._model_utils.ModelStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model on a graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a>) – Graph to fit on</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.infer_graphlet_vector">
+<span class="sig-name descname"><span class="pre">infer_graphlet_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.infer_graphlet_vector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a>) – graphlet for which to infer a vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.infer_graphlet_vector_batched">
+<span class="sig-name descname"><span class="pre">infer_graphlet_vector_batched</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.infer_graphlet_vector_batched" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a>) – graphlets (as a single graph but different graphlet-id) for which to infer
+vectors</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the model in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path where to store the model</p></li>
+<li><p><strong>key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Encryption key</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Whether or not to overwrite pre-existing file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pypgx.api.mllib.Pg2vecModel.trained_graphlet_vectors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trained_graphlet_vectors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><span class="pre">pypgx.api.frames._pgx_frame.PgxFrame</span></a></em><a class="headerlink" href="#pypgx.api.mllib.Pg2vecModel.trained_graphlet_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the trained graphlet vectors for the current pg2vec model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame containing the trained graphlet vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SigmoidCrossEntropyLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">SigmoidCrossEntropyLoss</span></span><a class="headerlink" href="#pypgx.api.mllib.SigmoidCrossEntropyLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api.mllib._loss_function.LossFunction</span></code></p>
+<p>Sigmoid Cross Entropy loss for binary classification</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SoftmaxCrossEntropyLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">SoftmaxCrossEntropyLoss</span></span><a class="headerlink" href="#pypgx.api.mllib.SoftmaxCrossEntropyLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api.mllib._loss_function.LossFunction</span></code></p>
+<p>Softmax Cross Entropy loss for multi-class classification</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGnnExplanation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">SupervisedGnnExplanation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_supervised_gnn_explanation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGnnExplanation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pypgx.api.mllib.GnnExplanation" title="pypgx.api.mllib._gnn_explanation.GnnExplanation"><code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api.mllib._gnn_explanation.GnnExplanation</span></code></a></p>
+<p>SupervisedGnnExplanation object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bool_label</strong> (<em>bool</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGnnExplanation.get_embedding">
+<span class="sig-name descname"><span class="pre">get_embedding</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGnnExplanation.get_embedding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the inferred embedding of the specified vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the embedding</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGnnExplanation.get_importance_graph">
+<span class="sig-name descname"><span class="pre">get_importance_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGnnExplanation.get_importance_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the importance Graph, that is, the computation graph with an additional vertex
+property indicating vertex importance. The additional importance property can be retrieved
+via get_vertex_importance_property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the importance graph</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph">PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGnnExplanation.get_label">
+<span class="sig-name descname"><span class="pre">get_label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGnnExplanation.get_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the inferred label of the specified vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the label</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGnnExplanation.get_logits">
+<span class="sig-name descname"><span class="pre">get_logits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGnnExplanation.get_logits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the inferred logits of the specified vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the logits</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGnnExplanation.get_vertex_feature_importance">
+<span class="sig-name descname"><span class="pre">get_vertex_feature_importance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGnnExplanation.get_vertex_feature_importance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the feature importances as a map from property to importance value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the feature importances.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[<a class="reference internal" href="api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a>, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGnnExplanation.get_vertex_importance_property">
+<span class="sig-name descname"><span class="pre">get_vertex_importance_property</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGnnExplanation.get_vertex_importance_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the vertex property that contains the computed vertex importance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the vertex importance property</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">SupervisedGraphWiseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_graphwise_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api.mllib._graphwise_model.GraphWiseModel</span></code></p>
+<p>SupervisedGraphWise model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.check_is_fitted">
+<span class="sig-name descname"><span class="pre">check_is_fitted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.check_is_fitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure the model is fitted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raise</dt>
+<dd class="field-even"><p>RuntimeError if the model is not fitted</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call <a class="reference internal" href="#pypgx.api.mllib.SupervisedGraphWiseModel.destroy" title="pypgx.api.mllib.SupervisedGraphWiseModel.destroy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">destroy()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy this model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.evaluate_labels">
+<span class="sig-name descname"><span class="pre">evaluate_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.evaluate_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate (macro averaged) classification performance statistics for the specified
+vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – the graph</p></li>
+<li><p><strong>vertices</strong> (<em>Union</em><em>[</em><em>Iterable</em><em>[</em><a class="reference internal" href="api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a><em>]</em><em>, </em><em>Iterable</em><em>[</em><em>int</em><em>]</em><em>]</em>) – the vertices to evaluate on. Can be a list of vertices or their
+IDs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame containing the metrics</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame">PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a ModelStorer object which can be used to save the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ModelStorer object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib._model_utils.ModelStorer" title="pypgx.api.mllib._model_utils.ModelStorer">ModelStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model on a graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – Graph to fit on</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_batch_size">
+<span class="sig-name descname"><span class="pre">get_batch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the batch size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>batch size</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_class_weights">
+<span class="sig-name descname"><span class="pre">get_class_weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_class_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the class weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dictionary mapping classes to their weights.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GraphWiseModelConfig object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the config</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib.GraphWiseModelConfig" title="pypgx.api.mllib.GraphWiseModelConfig">GraphWiseModelConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_conv_layer_config">
+<span class="sig-name descname"><span class="pre">get_conv_layer_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_conv_layer_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the configuration objects for the convolutional layers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>configurations</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib.GraphWiseConvLayerConfig" title="pypgx.api.mllib.GraphWiseConvLayerConfig">GraphWiseConvLayerConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_edge_input_feature_dim">
+<span class="sig-name descname"><span class="pre">get_edge_input_feature_dim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_edge_input_feature_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the edges input feature dimension, that is, the dimension of all the input edge
+properties when concatenated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>edges input feature dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_edge_input_property_names">
+<span class="sig-name descname"><span class="pre">get_edge_input_property_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_edge_input_property_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the edges input feature names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>edges input feature names</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_layer_size">
+<span class="sig-name descname"><span class="pre">get_layer_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_layer_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dimension of the embeddings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>embedding dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_learning_rate">
+<span class="sig-name descname"><span class="pre">get_learning_rate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_learning_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the initial learning rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>initial learning rate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_loss_function">
+<span class="sig-name descname"><span class="pre">get_loss_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_loss_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the loss function name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>loss function name. Can be one of SOFTMAX_CROSS_ENTROPY, SIGMOID_CROSS_ENTROPY,
+DEVNET (case insensitive)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_num_epochs">
+<span class="sig-name descname"><span class="pre">get_num_epochs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_num_epochs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of epochs to train the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of epochs to train the model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_prediction_layer_configs">
+<span class="sig-name descname"><span class="pre">get_prediction_layer_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_prediction_layer_configs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the configuration objects for the prediction layers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>configuration of the prediction layer</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib.GraphWisePredictionLayerConfig" title="pypgx.api.mllib.GraphWisePredictionLayerConfig">GraphWisePredictionLayerConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_seed">
+<span class="sig-name descname"><span class="pre">get_seed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the random seed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>random seed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_training_loss">
+<span class="sig-name descname"><span class="pre">get_training_loss</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_training_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the final training loss</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>training loss</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_vertex_input_feature_dim">
+<span class="sig-name descname"><span class="pre">get_vertex_input_feature_dim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_vertex_input_feature_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the input feature dimension, that is, the dimension of all the input vertex
+properties when concatenated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>input feature dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_vertex_input_property_names">
+<span class="sig-name descname"><span class="pre">get_vertex_input_property_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_vertex_input_property_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the vertices input feature names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>vertices input feature names</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.get_vertex_target_property_name">
+<span class="sig-name descname"><span class="pre">get_vertex_target_property_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.get_vertex_target_property_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the target property name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>target property name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.infer_and_get_explanation">
+<span class="sig-name descname"><span class="pre">infer_and_get_explanation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.infer_and_get_explanation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform inference on the specified vertex and generate an explanation that contains
+scores of how important each property and each vertex in the computation graph is for the
+prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – the graph</p></li>
+<li><p><strong>vertex</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxVertex" title="pypgx.api.PgxVertex"><em>PgxVertex</em></a><em> or </em><em>int</em>) – the vertex or its ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>explanation containing feature importance and vertex importance.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.mllib.SupervisedGnnExplanation" title="pypgx.api.mllib.SupervisedGnnExplanation">SupervisedGnnExplanation</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.infer_embeddings">
+<span class="sig-name descname"><span class="pre">infer_embeddings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.infer_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer the embeddings for the specified vertices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – the graph</p></li>
+<li><p><strong>vertices</strong> (<em>Union</em><em>[</em><em>Iterable</em><em>[</em><a class="reference internal" href="api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a><em>]</em><em>, </em><em>Iterable</em><em>[</em><em>int</em><em>]</em><em>]</em>) – the vertices to infer embeddings for. Can be a list of vertices or their
+IDs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame containing the embeddings for each vertex</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame">PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.infer_labels">
+<span class="sig-name descname"><span class="pre">infer_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.infer_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer the labels for the specified vertices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – the graph</p></li>
+<li><p><strong>vertices</strong> (<em>Union</em><em>[</em><em>Iterable</em><em>[</em><a class="reference internal" href="api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a><em>]</em><em>, </em><em>Iterable</em><em>[</em><em>int</em><em>]</em><em>]</em>) – the vertices to infer labels for. Can be a list of vertices or their
+IDs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame containing the labels for each vertex</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame">PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.infer_logits">
+<span class="sig-name descname"><span class="pre">infer_logits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.infer_logits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer the prediction logits for the specified vertices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – the graph</p></li>
+<li><p><strong>vertices</strong> (<em>Union</em><em>[</em><em>Iterable</em><em>[</em><a class="reference internal" href="api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a><em>]</em><em>, </em><em>Iterable</em><em>[</em><em>int</em><em>]</em><em>]</em>) – the vertices to infer logits for. Can be a list of vertices or their
+IDs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame containing the logits for each vertex</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame">PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.is_fitted">
+<span class="sig-name descname"><span class="pre">is_fitted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.is_fitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the model is fitted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>True</cite> if the model is fitted, <cite>False</cite> otherwise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the model in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path where to store the model</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – Encryption key</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Whether or not to overwrite pre-existing file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.SupervisedGraphWiseModel.update_is_fitted">
+<span class="sig-name descname"><span class="pre">update_is_fitted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.SupervisedGraphWiseModel.update_is_fitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether the model is fitted.</p>
+<p>This updates the internal state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib.</span></span><span class="sig-name descname"><span class="pre">UnsupervisedGraphWiseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_graphwise_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api.mllib._graphwise_model.GraphWiseModel</span></code></p>
+<p>UnsupervisedGraphWise model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.check_is_fitted">
+<span class="sig-name descname"><span class="pre">check_is_fitted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.check_is_fitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure the model is fitted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raise</dt>
+<dd class="field-even"><p>RuntimeError if the model is not fitted</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call <a class="reference internal" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.destroy" title="pypgx.api.mllib.UnsupervisedGraphWiseModel.destroy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">destroy()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy this model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a ModelStorer object which can be used to save the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ModelStorer object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib._model_utils.ModelStorer" title="pypgx.api.mllib._model_utils.ModelStorer">ModelStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model on a graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – Graph to fit on</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_batch_size">
+<span class="sig-name descname"><span class="pre">get_batch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the batch size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>batch size</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GraphWiseModelConfig object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the config</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib.GraphWiseModelConfig" title="pypgx.api.mllib.GraphWiseModelConfig">GraphWiseModelConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_conv_layer_config">
+<span class="sig-name descname"><span class="pre">get_conv_layer_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_conv_layer_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the configuration objects for the convolutional layers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>configurations</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib.GraphWiseConvLayerConfig" title="pypgx.api.mllib.GraphWiseConvLayerConfig">GraphWiseConvLayerConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_dgi_layer_config">
+<span class="sig-name descname"><span class="pre">get_dgi_layer_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_dgi_layer_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the configuration object for the dgi layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>configuration</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.mllib.GraphWiseDgiLayerConfig" title="pypgx.api.mllib.GraphWiseDgiLayerConfig">GraphWiseDgiLayerConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_edge_input_feature_dim">
+<span class="sig-name descname"><span class="pre">get_edge_input_feature_dim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_edge_input_feature_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the edges input feature dimension, that is, the dimension of all the input edge
+properties when concatenated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>edges input feature dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_edge_input_property_names">
+<span class="sig-name descname"><span class="pre">get_edge_input_property_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_edge_input_property_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the edges input feature names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>edges input feature names</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_layer_size">
+<span class="sig-name descname"><span class="pre">get_layer_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_layer_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dimension of the embeddings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>embedding dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_learning_rate">
+<span class="sig-name descname"><span class="pre">get_learning_rate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_learning_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the initial learning rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>initial learning rate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_loss_function">
+<span class="sig-name descname"><span class="pre">get_loss_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_loss_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the loss function name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>loss function name. Can only be SIGMOID_CROSS_ENTROPY (case insensitive)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_num_epochs">
+<span class="sig-name descname"><span class="pre">get_num_epochs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_num_epochs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of epochs to train the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of epochs to train the model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_seed">
+<span class="sig-name descname"><span class="pre">get_seed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the random seed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>random seed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_training_loss">
+<span class="sig-name descname"><span class="pre">get_training_loss</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_training_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the final training loss</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>training loss</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_vertex_input_feature_dim">
+<span class="sig-name descname"><span class="pre">get_vertex_input_feature_dim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_vertex_input_feature_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the input feature dimension, that is, the dimension of all the input vertex
+properties when concatenated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>input feature dimension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.get_vertex_input_property_names">
+<span class="sig-name descname"><span class="pre">get_vertex_input_property_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.get_vertex_input_property_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the vertices input feature names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>vertices input feature names</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.infer_and_get_explanation">
+<span class="sig-name descname"><span class="pre">infer_and_get_explanation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clusters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.infer_and_get_explanation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform inference on the specified vertex and generate an explanation that contains
+scores of how important each property and each vertex in the computation graph is for the
+embeddings position relative to embeddings of other vertices in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a>) – the graph</p></li>
+<li><p><strong>vertex</strong> (<em>Union</em><em>[</em><a class="reference internal" href="api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a><em>, </em><em>int</em><em>]</em>) – the vertex</p></li>
+<li><p><strong>num_clusters</strong> (<em>int</em>) – the number of semantic vertex clusters expected in the graph,
+must be greater than 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>explanation containing feature importance and vertex importance.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.mllib.GnnExplanation" title="pypgx.api.mllib._gnn_explanation.GnnExplanation">pypgx.api.mllib._gnn_explanation.GnnExplanation</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.infer_embeddings">
+<span class="sig-name descname"><span class="pre">infer_embeddings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.infer_embeddings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer the embeddings for the specified vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame containing the embeddings for each vertex.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame">PgxFrame</a></p>
+</dd>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a>) – </p></li>
+<li><p><strong>vertices</strong> (<em>Union</em><em>[</em><em>Iterable</em><em>[</em><a class="reference internal" href="api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a><em>]</em><em>, </em><em>Iterable</em><em>[</em><em>int</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.is_fitted">
+<span class="sig-name descname"><span class="pre">is_fitted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.is_fitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the model is fitted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>True</cite> if the model is fitted, <cite>False</cite> otherwise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the model in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path where to store the model</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – Encryption key</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Whether or not to overwrite pre-existing file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib.UnsupervisedGraphWiseModel.update_is_fitted">
+<span class="sig-name descname"><span class="pre">update_is_fitted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel.update_is_fitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether the model is fitted.</p>
+<p>This updates the internal state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib._model_utils.ModelStorer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib._model_utils.</span></span><span class="sig-name descname"><span class="pre">ModelStorer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib._model_utils.ModelStorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ModelStorer object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#pypgx.api.mllib.SupervisedGraphWiseModel" title="pypgx.api.mllib.SupervisedGraphWiseModel"><em>SupervisedGraphWiseModel</em></a><em>, </em><a class="reference internal" href="#pypgx.api.mllib.Pg2vecModel" title="pypgx.api.mllib.Pg2vecModel"><em>Pg2vecModel</em></a><em>, </em><a class="reference internal" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel" title="pypgx.api.mllib.UnsupervisedGraphWiseModel"><em>UnsupervisedGraphWiseModel</em></a><em>, </em><a class="reference internal" href="#pypgx.api.mllib.DeepWalkModel" title="pypgx.api.mllib.DeepWalkModel"><em>DeepWalkModel</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib._model_utils.ModelStorer.db">
+<span class="sig-name descname"><span class="pre">db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_store</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jdbc_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keystore_alias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib._model_utils.ModelStorer.db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store a model to a database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – username in database</p></li>
+<li><p><strong>password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – password of username in database</p></li>
+<li><p><strong>model_store</strong> (<em>str</em>) – model store in database</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – name of the model to store</p></li>
+<li><p><strong>jdbc_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – jdbc url of database</p></li>
+<li><p><strong>model_description</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – description of model</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – boolean value for overwriting or not</p></li>
+<li><p><strong>keystore_alias</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the keystore alias to get the password in the keystore</p></li>
+<li><p><strong>schema</strong> – the schema of the model store in database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib._model_utils.ModelStorer.file">
+<span class="sig-name descname"><span class="pre">file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib._model_utils.ModelStorer.file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store an encrypted model to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – path to store model</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – key used for encryption</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – boolean value for overwriting or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.mllib._model_utils.ModelLoader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.mllib._model_utils.</span></span><span class="sig-name descname"><span class="pre">ModelLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">analyst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_model_loader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrapper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_class</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib._model_utils.ModelLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ModelLoader object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analyst</strong> (<a class="reference internal" href="api.html#pypgx.api.Analyst" title="pypgx.api.Analyst"><em>Analyst</em></a>) – </p></li>
+<li><p><strong>java_model_loader</strong> (<em>Any</em>) – </p></li>
+<li><p><strong>wrapper</strong> (<em>Callable</em>) – </p></li>
+<li><p><strong>java_class</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib._model_utils.ModelLoader.db">
+<span class="sig-name descname"><span class="pre">db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_store</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jdbc_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keystore_alias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib._model_utils.ModelLoader.db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a model stored in a database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – username in database</p></li>
+<li><p><strong>password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – password of username in database</p></li>
+<li><p><strong>model_store</strong> (<em>str</em>) – model store in database</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – name of the model to load</p></li>
+<li><p><strong>jdbc_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – jdbc url of database</p></li>
+<li><p><strong>keystore_alias</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the keystore alias to get the password in the keystore</p></li>
+<li><p><strong>schema</strong> – the schema of the model store in database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>model stored in database.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#pypgx.api.mllib.SupervisedGraphWiseModel" title="pypgx.api.mllib.SupervisedGraphWiseModel">SupervisedGraphWiseModel</a>, <a class="reference internal" href="#pypgx.api.mllib.Pg2vecModel" title="pypgx.api.mllib.Pg2vecModel">Pg2vecModel</a>, <a class="reference internal" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel" title="pypgx.api.mllib.UnsupervisedGraphWiseModel">UnsupervisedGraphWiseModel</a>, <a class="reference internal" href="#pypgx.api.mllib.DeepWalkModel" title="pypgx.api.mllib.DeepWalkModel">DeepWalkModel</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.mllib._model_utils.ModelLoader.file">
+<span class="sig-name descname"><span class="pre">file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.mllib._model_utils.ModelLoader.file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an encrypted model stored in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – path of stored model</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – used for encryption</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>model stored in file.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#pypgx.api.mllib.SupervisedGraphWiseModel" title="pypgx.api.mllib.SupervisedGraphWiseModel">SupervisedGraphWiseModel</a>, <a class="reference internal" href="#pypgx.api.mllib.Pg2vecModel" title="pypgx.api.mllib.Pg2vecModel">Pg2vecModel</a>, <a class="reference internal" href="#pypgx.api.mllib.UnsupervisedGraphWiseModel" title="pypgx.api.mllib.UnsupervisedGraphWiseModel">UnsupervisedGraphWiseModel</a>, <a class="reference internal" href="#pypgx.api.mllib.DeepWalkModel" title="pypgx.api.mllib.DeepWalkModel">DeepWalkModel</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="auth.html" class="btn btn-neutral float-right" title="Authorization and Permissions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api.html" class="btn btn-neutral float-left" title="API package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

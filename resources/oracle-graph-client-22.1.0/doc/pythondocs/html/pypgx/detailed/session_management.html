@@ -1,0 +1,1036 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3. Managing Sessions &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Managing Graphs" href="graph_management.html" />
+    <link rel="prev" title="2. Managing the Server" href="server_management.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/index.html">OPG4Py package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using PyPGX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_management.html">2. Managing the Server</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Managing Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_management.html">4. Managing Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_algorithms.html">5. Graph algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgql_results.html">6. Using PGQL results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vertex_usage.html">7. Dealing with Vertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edge_usage.html">8. Dealing with Edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frames_usage.html">9. Using Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_sync.html">10. Graph Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">11. Others…</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">PyPGX package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Using PyPGX</a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>Managing Sessions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/pypgx/detailed/session_management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-sessions">
+<h1><span class="section-number">3. </span>Managing Sessions<a class="headerlink" href="#managing-sessions" title="Permalink to this headline">¶</a></h1>
+<p>The PgxSession class can be used to manage and execute operations on the underlying session.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.</span></span><span class="sig-name descname"><span class="pre">PgxSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_session</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A PGX session represents an active user connected to a ServerInstance.</p>
+<p>Every session gets a workspace assigned on the server, which can be used to
+read graph data, create transient data or custom algorithms for the sake of
+graph analysis. Once a session gets destroyed, all data in the session
+workspace is freed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>LATEST_SNAPSHOT</strong> – The timestamp of the most recent snapshot, used to easily move to the
+newest snapshot (see <a class="reference internal" href="../api.html#pypgx.api.PgxSession.set_snapshot" title="pypgx.api.PgxSession.set_snapshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_snapshot()</span></code></a>)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Close this session object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">compile_program</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Compile a Green-Marl program for parallel execution with all optimizations enabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path to program</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – If the procedure in the given code already exists, overwrite if true,
+throw an exception otherwise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.CompiledProgram" title="pypgx.api._compiled_program.CompiledProgram">pypgx.api._compiled_program.CompiledProgram</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">compile_program_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Compile a Green-Marl program (if it is supported by the corresponding PyPGX distribution).
+Otherwise compile a Java program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>str</em>) – The Green-Marl/Java code to compile</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – If the procedure in the given code already exists, overwrite if true,
+throw an exception otherwise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.CompiledProgram" title="pypgx.api._compiled_program.CompiledProgram">pypgx.api._compiled_program.CompiledProgram</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_analyst</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create and return a new analyst.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An analyst object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.Analyst" title="pypgx.api._analyst.Analyst">pypgx.api._analyst.Analyst</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a frame with the specified data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>schema</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p></li>
+<li><p><strong>column_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>]</em>) – Map of iterables, columnName -&gt; columnData</p></li>
+<li><p><strong>frame_name</strong> (<em>str</em>) – Name of the frame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A frame builder initialized with the given schema</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_frame_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a frame builder initialized with the given schema</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>schema</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A frame builder initialized with the given schema</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrameBuilder" title="pypgx.api.frames._pgx_frame_builder.PgxFrameBuilder">pypgx.api.frames._pgx_frame_builder.PgxFrameBuilder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_graph_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'integer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_id_generation_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'user_ids'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_id_generation_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto_generated'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a graph builder with the given vertex ID type and Ids Mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_type</strong> (<em>str</em>) – The type of the vertex ID</p></li>
+<li><p><strong>vertex_id_generation_strategy</strong> (<em>str</em>) – The vertices Id generation
+strategy to be used</p></li>
+<li><p><strong>edge_id_generation_strategy</strong> (<em>str</em>) – The edges Id generation strategy to be used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.GraphBuilder" title="pypgx.api._graph_builder.GraphBuilder">pypgx.api._graph_builder.GraphBuilder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a map.</p>
+<p>Possible types are:
+[‘integer’,’long’,’double’,’boolean’,’string’,’vertex’,’edge’,
+‘local_date’,’time’,’timestamp’,’time_with_timezone’,’timestamp_with_timezone’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_type</strong> (<em>str</em>) – Property type of the keys that are going to be stored inside the map</p></li>
+<li><p><strong>value_type</strong> (<em>str</em>) – Property type of the values that are going to be stored inside the map</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Map name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A named PgxMap of key content type <cite>key_type</cite> and value content type <cite>value_type</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxMap" title="pypgx.api._pgx_map.PgxMap">pypgx.api._pgx_map.PgxMap</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a sequence of scalars.</p>
+<p>Possible types are:
+[‘integer’,’long’,’double’,’boolean’,’string’,’vertex’,’edge’,
+‘local_date’,’time’,’timestamp’,’time_with_timezone’,’timestamp_with_timezone’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>content_type</strong> (<em>str</em>) – Property type of the elements in the sequence</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Sequence name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A named ScalarSequence of content type <cite>content_type</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.ScalarSequence" title="pypgx.api._pgx_collection.ScalarSequence">pypgx.api._pgx_collection.ScalarSequence</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a set of scalars.</p>
+<p>Possible types are:
+[‘integer’,’long’,’double’,’boolean’,’string’,’vertex’,’edge’,
+‘local_date’,’time’,’timestamp’,’time_with_timezone’,’timestamp_with_timezone’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>content_type</strong> (<em>str</em>) – content type of the set</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the set’s name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A named ScalarSet of content type <cite>content_type</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.ScalarSet" title="pypgx.api._pgx_collection.ScalarSet">pypgx.api._pgx_collection.ScalarSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">describe_graph_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Describe the graph contained in the file at the given path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – Graph file path</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The configuration which can be used to load the graph</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.GraphConfig" title="pypgx.api._graph_config.GraphConfig">pypgx.api._graph_config.GraphConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">describe_graph_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files_path</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Describe the graph contained in the files at the given paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>files_path</strong> (<em>str</em>) – Paths to the files</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The configuration which can be used to load the graph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Destroy this session object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">edge_provider_from_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_vertex_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'src'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination_vertex_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dst'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create an edge provider from a PgxFrame to later build a PgxGraph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>provider_name</strong> (<em>str</em>) – edge provider name</p></li>
+<li><p><strong>source_provider</strong> (<em>str</em>) – vertex source provider name</p></li>
+<li><p><strong>destination_provider</strong> (<em>str</em>) – vertex destination provider name</p></li>
+<li><p><strong>frame</strong> (<a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><em>pypgx.api.frames._pgx_frame.PgxFrame</em></a>) – PgxFrame to use</p></li>
+<li><p><strong>source_vertex_column</strong> (<em>str</em>) – column to use as source keys. Defaults to “src”</p></li>
+<li><p><strong>destination_vertex_column</strong> (<em>str</em>) – column to use as destination keys. Defaults to “dst”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the EdgeFrameDeclaration object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pypgx.api.frames._edge_frame_declaration.EdgeFrameDeclaration</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">execute_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Submit any query with a ON-clause.</p>
+<p>The ON-clause indicates the graph on which the query will be executed.
+The graph name in the ON-clause is evaluated with the same semantics as
+PgxSession.getGraphAsync(String).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The query result set</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="../api.html#pypgx.api.PgqlResultSet" title="pypgx.api._pgql_result_set.PgqlResultSet">pypgx.api._pgql_result_set.PgqlResultSet</a>]</p>
+</dd>
+</dl>
+<p>throws InterruptedException if the caller thread gets interrupted while
+waiting for completion.
+throws ExecutionException   if any exception occurred during
+asynchronous execution. The actual exception will be nested.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">explain_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Explain the execution plan of a pattern matching query.</p>
+<p>Note: Different PGX versions may return different execution plans.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The query plan</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pypgx.api._operation.Operation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_available_compiled_program_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the set of available compiled program IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Set[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_available_snapshots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">snapshot</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return a list of all available snapshots of the given input graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>snapshot</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a>) – A ‘PgxGraph’ object for which the available snapshots
+shall be retrieved</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of ‘GraphMetaData’ objects, each corresponding to a
+snapshot of the input graph</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../api.html#pypgx.api.GraphMetaData" title="pypgx.api._graph_meta_data.GraphMetaData">pypgx.api._graph_meta_data.GraphMetaData</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_compiled_program</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get a compiled program by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The id of the compiled program</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.CompiledProgram" title="pypgx.api._compiled_program.CompiledProgram">pypgx.api._compiled_program.CompiledProgram</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Find and return a graph with name <cite>name</cite> within the given namespace loaded inside PGX.</p>
+<p>The search for the snapshot to return is done according to the following rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if namespace is private, than the search occurs on already referenced snapshots of the
+graph with name <cite>name</cite> and the most recent snapshot is returned</p></li>
+<li><p>if namespace is public, then the search occurs on published graphs and the most recent
+snapshot of the published graph with name <cite>name</cite> is returned</p></li>
+<li><p>if namespace is None, then the private namespace is searched first and, if no snapshot
+is found, the public namespace is then searched</p></li>
+</ul>
+</div></blockquote>
+<p>Multiple calls of this method with the same parameters will return different
+<a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxGraph</span></code></a> objects referencing the same graph, with the server keeping track
+of how many references a session has to each graph.</p>
+<p>Therefore, a graph is released within the server either if:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>all the references are moved to another graph (e.g. via <a class="reference internal" href="../api.html#pypgx.api.PgxSession.set_snapshot" title="pypgx.api.PgxSession.set_snapshot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_snapshot()</span></code></a>)</p></li>
+<li><p>the <a class="reference internal" href="../api.html#pypgx.api.PgxGraph.destroy" title="pypgx.api.PgxGraph.destroy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PgxGraph.destroy()</span></code></a> method is called on one reference. Note that
+this invalidates all references</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the graph</p></li>
+<li><p><strong>namespace</strong> (<a class="reference internal" href="../api.html#pypgx.api.Namespace" title="pypgx.api.Namespace"><em>Namespace</em></a><em> or </em><em>None</em>) – The namespace where to look up the graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The graph with the given name</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph">PgxGraph</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_graphs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return a collection of graph names accessible under the given namespace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>namespace</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.Namespace" title="pypgx.api._namespace.Namespace"><em>pypgx.api._namespace.Namespace</em></a><em>]</em>) – The namespace where to look up the graphs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_idle_timeout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the idle timeout of this session</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the idle timeout in seconds</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the identifier of the current session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>identifier of this session</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_pgql_result_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get a PGQL result set by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The PGQL result set ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The requested PGQL result set or None if no such result set
+exists for this session</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="../api.html#pypgx.api.PgqlResultSet" title="pypgx.api._pgql_result_set.PgqlResultSet">pypgx.api._pgql_result_set.PgqlResultSet</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_session_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the context describing the current session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>context of this session</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pypgx.api._session_context.SessionContext</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_source</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the current session source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>session source</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_task_timeout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the task timeout of this session</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the task timeout in seconds</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">graph_from_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_providers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_providers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partitioned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create PgxGraph from vertex providers and edge providers.</p>
+<p>partitioned must be set to True if multiple vertex or edge providers are given</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph_name</strong> (<em>str</em>) – graph name</p></li>
+<li><p><strong>vertex_providers</strong> (<em>List</em><em>[</em><em>pypgx.api.frames._vertex_frame_declaration.VertexFrameDeclaration</em><em>]</em>) – list of vertex providers</p></li>
+<li><p><strong>edge_providers</strong> (<em>List</em><em>[</em><em>pypgx.api.frames._edge_frame_declaration.EdgeFrameDeclaration</em><em>]</em>) – list of edge providers</p></li>
+<li><p><strong>partitioned</strong> (<em>bool</em>) – whether the graph is partitioned or not. Defaults to True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the PgxGraph object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pandas_to_pgx_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pandas_dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a frame from a pandas dataframe
+Duplicate columns will be renamed.
+Mixed column types are not supported.</p>
+<p>This method requires pandas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pandas_dataframe</strong> – The Pandas dataframe to use</p></li>
+<li><p><strong>frame_name</strong> (<em>str</em>) – Name of the frame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the frame created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">prepare_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Prepare a pattern matching query with a ON-clause.</p>
+<p>The ON-clause indicates the graph on which the query will be executed.
+The graph name in the ON-clause is evaluated with the same semantics as
+getGraph(String).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A prepared statement object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PreparedStatement" title="pypgx.api._prepared_statement.PreparedStatement">pypgx.api._prepared_statement.PreparedStatement</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">query_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Submit a pattern matching query with a ON-clause.</p>
+<p>The ON-clause indicates the graph on which the query will be executed.
+The graph name in the ON-clause is evaluated with the same semantics as
+PgxSession.getGraph(String).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The query result set</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="../api.html#pypgx.api.PgqlResultSet" title="pypgx.api._pgql_result_set.PgqlResultSet">pypgx.api._pgql_result_set.PgqlResultSet</a>]</p>
+</dd>
+</dl>
+<p>throws InterruptedException if the caller thread gets interrupted while
+waiting for completion.
+throws ExecutionException   if any exception occurred during
+asynchronous execution. The actual exception will be nested.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">read_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create a new frame reader with which it is possible to parameterize the loading of the
+row frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A frame reader object with which it is possible to parameterize
+the loading</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxGenericFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader">pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">read_graph_as_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creation_timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Read a graph and its properties of a specific version (metaData or creationTimestamp)
+into memory.</p>
+<p>The creationTimestamp must be a valid version of the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<a class="reference internal" href="../api.html#pypgx.api.GraphConfig" title="pypgx.api._graph_config.GraphConfig"><em>pypgx.api._graph_config.GraphConfig</em></a>) – The graph config</p></li>
+<li><p><strong>meta_data</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.GraphMetaData" title="pypgx.api._graph_meta_data.GraphMetaData"><em>pypgx.api._graph_meta_data.GraphMetaData</em></a><em>]</em>) – The metaData object returned by
+get_available_snapshots(GraphConfig) identifying the version</p></li>
+<li><p><strong>creation_timestamp</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The creation timestamp (milliseconds since jan 1st 1970)
+identifying the version to be checked out</p></li>
+<li><p><strong>new_graph_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – How the graph should be named. If None, a name
+will be generated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The PgxGraph object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">read_graph_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_source</span></span></em><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph_name</strong> (<em>str</em>) – Name of graph</p></li>
+<li><p><strong>graph_source</strong> (<em>str</em>) – Source of graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">read_graph_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – File path</p></li>
+<li><p><strong>file_format</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – File format of graph</p></li>
+<li><p><strong>graph_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">read_graph_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_file_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Load the graph contained in the files at the given paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_paths</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Iterable</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Paths to the vertex files</p></li>
+<li><p><strong>edge_file_paths</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Iterable</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) – Path to the edge file</p></li>
+<li><p><strong>file_format</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – File format</p></li>
+<li><p><strong>graph_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Loaded graph name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">read_graph_with_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_age</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_age_time_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'days'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_if_full</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_if_not_fresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Read a graph and its properties, specified in the graph config, into memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>pathlib.PurePath</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>, </em><a class="reference internal" href="../api.html#pypgx.api.GraphConfig" title="pypgx.api._graph_config.GraphConfig"><em>pypgx.api._graph_config.GraphConfig</em></a><em>]</em>) – The graph config</p></li>
+<li><p><strong>max_age</strong> (<em>int</em>) – If another snapshot of the given graph already exists,
+the age of the latest existing snapshot will be compared to the given maxAge.
+If the latest snapshot is in the given range,
+it will be returned, otherwise a new snapshot will be created.</p></li>
+<li><p><strong>max_age_time_unit</strong> (<em>str</em>) – The time unit of the maxAge parameter</p></li>
+<li><p><strong>block_if_full</strong> (<em>bool</em>) – If true and a new snapshot needs to be created but
+no more snapshots are allowed by the server configuration, the
+returned future will not complete until space becomes available.
+Iterable full and this flag is false, the returned future will
+complete exceptionally instead.</p></li>
+<li><p><strong>update_if_not_fresh</strong> (<em>bool</em>) – If a newer data version exists in the backing data source
+(see PgxGraph.is_fresh()),
+this flag tells whether to read it and create another snapshot inside PGX.
+If the “snapshots_source” field of config is SnapshotsSource.REFRESH,
+the returned graph may have multiple snapshots, depending on whether
+previous reads with the same config occurred; otherwise, if the
+“snapshots_source” field is SnapshotsSource.CHANGE_SET,
+only the most recent snapshot (either pre-existing or freshly read) will be visible.</p></li>
+<li><p><strong>graph_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – How the graph should be named. If null, a name will be generated.
+If a graph with that name already exists, the returned future will
+complete exceptionally.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">register_keystore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keystore_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keystore_password</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Register a keystore.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keystore_path</strong> (<em>str</em>) – The path to the keystore which shall be registered</p></li>
+<li><p><strong>keystore_password</strong> (<em>str</em>) – The password of the provided keystore</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">server_instance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../api.html#pypgx.api.ServerInstance" title="pypgx.api._server_instance.ServerInstance"><span class="pre">pypgx.api._server_instance.ServerInstance</span></a></em></dt>
+<dd><p>Get the server instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The server instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_snapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creation_timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_delete_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set a graph to a specific snapshot.</p>
+<p>You can use this method to jump back and forth in time between various
+snapshots of the same graph.
+If successful, the given graph will point to the requested snapshot
+after the returned future completes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph"><em>pypgx.api._pgx_graph.PgxGraph</em></a><em>]</em>) – Input graph</p></li>
+<li><p><strong>meta_data</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.GraphMetaData" title="pypgx.api._graph_meta_data.GraphMetaData"><em>pypgx.api._graph_meta_data.GraphMetaData</em></a><em>]</em>) – A GraphMetaData object used to identify the snapshot</p></li>
+<li><p><strong>creation_timestamp</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The metaData object returned by (GraphConfig) identifying
+the version to be checked out</p></li>
+<li><p><strong>force_delete_properties</strong> (<em>bool</em>) – Graphs with transient properties
+cannot be checked out to a different version.
+If this flag is set to true, the checked out graph will
+no longer contain any transient properties.
+If false, the returned future will complete exceptionally with
+an UnsupportedOperationException as its cause.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">vertex_provider_from_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_key_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'id'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a vertex provider from a PgxFrame to later build a PgxGraph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>provider_name</strong> (<em>str</em>) – vertex provider name</p></li>
+<li><p><strong>frame</strong> (<a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><em>pypgx.api.frames._pgx_frame.PgxFrame</em></a>) – PgxFrame to use</p></li>
+<li><p><strong>vertex_key_column</strong> (<em>str</em>) – column to use as keys. Defaults to “id”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the VertexFrameDeclaration object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pypgx.api.frames._vertex_frame_declaration.VertexFrameDeclaration</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="graph_management.html" class="btn btn-neutral float-right" title="4. Managing Graphs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="server_management.html" class="btn btn-neutral float-left" title="2. Managing the Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

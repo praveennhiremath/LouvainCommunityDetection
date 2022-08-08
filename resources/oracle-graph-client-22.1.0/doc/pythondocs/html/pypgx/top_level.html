@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Top level package &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API package" href="api.html" />
+    <link rel="prev" title="PyPGX package" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opg4py/detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opg4py/index.html">OPG4Py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailed/index.html">Using PyPGX</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PyPGX package</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Top level package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">API package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.html">MLlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">Authorization and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Graph Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frames.html">Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redaction.html">Redaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pg_rdbms.html">Graph Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">PyPGX package</a> &raquo;</li>
+        
+      <li>Top level package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/pypgx/top_level.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pypgx">
+<span id="top-level-package"></span><h1>Top level package<a class="headerlink" href="#module-pypgx" title="Permalink to this headline">¶</a></h1>
+<p>Python PGX client.</p>
+<p>Some core functions are provided directly at the top level of the package.</p>
+<p>The documented behaviour of the PyPGX API is stable between versions. Other parts of
+the API, in particular attributes whose name starts with an underscore, are considered
+internal implementation details and may change between versions.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="pypgx.PgxError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.</span></span><span class="sig-name descname"><span class="pre">PgxError</span></span><a class="headerlink" href="#pypgx.PgxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An error representing exceptions from PGX.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypgx.get_instance">
+<span class="sig-prename descclassname"><span class="pre">pypgx.</span></span><span class="sig-name descname"><span class="pre">get_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.get_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a handle to a PGX instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The base URL in the format host [ : port][ /path]
+of the PGX server REST end-point.
+If <cite>base_url</cite> is None, the default will
+be used which points to embedded PGX instance.</p></li>
+<li><p><strong>token</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The access token</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#pypgx.api.ServerInstance" title="pypgx.api._server_instance.ServerInstance">pypgx.api._server_instance.ServerInstance</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypgx.get_session">
+<span class="sig-prename descclassname"><span class="pre">pypgx.</span></span><span class="sig-name descname"><span class="pre">get_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pgx_conf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect_stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect_stderr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.get_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a PGX server and return a PgxSession instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The URL of the running session. If None a session is created.</p></li>
+<li><p><strong>session_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Session name. If None “python_pgx_client” is the default value.</p></li>
+<li><p><strong>token</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The access token</p></li>
+<li><p><strong>idle_timeout</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of seconds after which the shell session will time out.</p></li>
+<li><p><strong>task_timeout</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of seconds after which tasks submitted by the shell session will
+time out.</p></li>
+<li><p><strong>pgx_conf</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Path to PGX config file. If not set, PGX looks at default locations. See the
+‘Engine and Runtime Configuration Guide’ in the PGX documentation.</p></li>
+<li><p><strong>redirect_stdout</strong> (<em>None</em>) – Deprecated.</p></li>
+<li><p><strong>redirect_stderr</strong> (<em>None</em>) – Deprecated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxSession</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api.html#pypgx.api.PgxSession" title="pypgx.api._pgx_session.PgxSession">pypgx.api._pgx_session.PgxSession</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypgx.setloglevel">
+<span class="sig-prename descclassname"><span class="pre">pypgx.</span></span><span class="sig-name descname"><span class="pre">setloglevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loggername</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DEBUG'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.setloglevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set loglevel for PGX.</p>
+<p>If <cite>loglevel</cite> is invalid (see below), it writes this to the python log as an error
+without raising any exceptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>loggername</strong> (<em>str</em>) – Name of the PGX logger. If empty, ROOT logger’s level is updated.</p></li>
+<li><p><strong>loglevel</strong> (<em>str</em>) – Level specification. Must be one of
+<cite>“OFF”, “FATAL”, “ERROR”, “WARN”, “INFO”, “DEBUG”, “TRACE”, “ALL”</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="api.html" class="btn btn-neutral float-right" title="API package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="PyPGX package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

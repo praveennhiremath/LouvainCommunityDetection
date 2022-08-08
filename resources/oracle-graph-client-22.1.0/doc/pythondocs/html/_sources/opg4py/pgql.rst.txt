@@ -1,0 +1,6 @@
+OPG4Py Pgql
+===================
+
+.. automodule:: opg4py.pgql
+   :members:
+   :show-inheritance:

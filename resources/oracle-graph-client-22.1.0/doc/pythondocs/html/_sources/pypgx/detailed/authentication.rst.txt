@@ -1,0 +1,27 @@
+Authentication
+==============
+
+The Oracle Graph server (PGX) uses an Oracle Database as identity manager. Both username and password based as well as Kerberos based authentication is supported.
+
+You can connect to a remote graph server (PGX) instance in your Python program. You must first authenticate with the remote server before you can create a session as illustrated in the following example::
+
+   import pypgx as pgx
+   import pypgx.pg.rdbms.graph_server as graph_server
+
+   base_url = "https://localhost:7007"
+   username = "scott"
+   password = "tiger"
+
+   instance = graph_server.get_instance(base_url, username, password)
+   session = instance.create_session("python_pgx_client")
+   print(session)
+
+if your token expires, you can log in again without losing any of your session data by reauthenticating as illustrated in the following example::
+
+   graph_server.reauthenticate(instance, "<user>", "<password>") # log in again
+
+Refer to the section below, for the complete API reference on user authentication.
+
+.. automodule:: pypgx.pg.rdbms
+   :members:
+   :noindex:

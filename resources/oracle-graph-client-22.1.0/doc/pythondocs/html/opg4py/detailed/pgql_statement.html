@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2. Creating a PGQL-on-RDBMS statement &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Translating PGQL queries to SQL" href="pgql_sql_translation.html" />
+    <link rel="prev" title="1. Connecting using PGQL-on-RDBMS" href="pgql_connection.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using OPG4Py</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pgql_connection.html">1. Connecting using PGQL-on-RDBMS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Creating a PGQL-on-RDBMS statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgql_sql_translation.html">3. Translating PGQL queries to SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgql_result_set.html">4. Retrieving PGQL-on-RDBMS results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">OPG4Py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pypgx/detailed/index.html">Using PyPGX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pypgx/index.html">PyPGX package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Using OPG4Py</a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>Creating a PGQL-on-RDBMS statement</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/opg4py/detailed/pgql_statement.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-a-pgql-on-rdbms-statement">
+<h1><span class="section-number">2. </span>Creating a PGQL-on-RDBMS statement<a class="headerlink" href="#creating-a-pgql-on-rdbms-statement" title="Permalink to this headline">¶</a></h1>
+<p>The following classes can be used to create PGQL statements and prepared statements accordingly.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlStatement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_statement</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Wrapper class for oracle.pg.rdbms.pgql.PgqlStatement.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Allows to cancel currently running execute operation.</p>
+<p>Note that cancel does not rollback already executed modifications.</p>
+<p>Throws: oracle.pgql.lang.PgqlException - When an error occurs while canceling current operation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Releases this PgqlStatment’s database and JDBC resources.</p>
+<p>Closing this PgqlStatement will close all PgqlResultSets that were created from it.</p>
+<p>Throws: oracle.pgql.lang.PgqlException</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Executes a PGQL Query, Modify or Create/Drop operation on this instance’s property graph.</p>
+<p>Supported query options (matchOptions) are the same as those for executeQuery.</p>
+<p>Supported modify options are:</p>
+<p>STREAMING=T Use result sets instead of temporary tables to perform the update.</p>
+<p>AUTO_COMMIT=F Do not commit after performing the modify operation.</p>
+<p>DELETE_CASCADE=F Do not delete incoming/outgoing edges when deleting a vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL modify to execute</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query and update execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>match_options</strong> – additional options used to influence query translation and execution</p></li>
+<li><p><strong>options</strong> – additional options used to influence modify translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the provided PGQL query is a select, false for other statements</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">execute_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Translates this PGQL statement into a SQL statement and executes it against this instance’s property graph.</p>
+<p>Supported query options are:</p>
+<p>USE_RW=F Use CONNECT BY instead of recursive WITH for unbounded path traversals</p>
+<p>MAX_PATH_LEN=n Traverse at most n hops when evaluating unbounded path traversals</p>
+<p>EDGE_SET_PARTIAL=T Fetch properties for each start and end vertex found when reading edges from the query result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL query to execute</p></li>
+<li><p><strong>timeout</strong> – the number of seconds for query execution to finish</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>options</strong> – additional options used to influence query translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlResultSet object with the result of the provided PGQL query</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_batch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the number of commands that should be batched when executing updates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the update batch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_fetch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the number of rows that should be fetched from the database when more rows are needed for a query result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the query fetch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_modify_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the number of rows that were modified by last execute operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of rows modified</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_result_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Retrieve the current result as a PgqlResultSet object.</p>
+<p>This method should be called only once per result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Current result as a ResultSet object or null if the query is not a SELECT query</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_batch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set the number of commands that should be batched when executing updates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_size</strong> – the update batch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_fetch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fetch_size</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set the number of rows that should be fetched from the database when more rows are needed for a query result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fetch_size</strong> – the query fetch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">translate_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Translates this instance’s PGQL statement into a SQL statement.</p>
+<p>Supported query options are:</p>
+<p>USE_RW=F Use CONNECT BY instead of recursive WITH for unbounded path traversals</p>
+<p>MAX_PATH_LEN=n Traverse at most n hops when evaluating unbounded path traversals</p>
+<p>EDGE_SET_PARTIAL=T Fetch properties for each start and end vertex found when reading edges from the query result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL query to translate</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>options</strong> – additional options used to influence query translation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlSqlTrans object with the SQL translation and column metadata for the provided PGQL query</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">translate_statement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Translates the given PGQL statement into a series of SQL statements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL statement to translate</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>match_options</strong> – additional options used to influence query translation and execution</p></li>
+<li><p><strong>options</strong> – additional options used to influence DDL/DML translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the SQL statements and metadata necessary to execute the provided SQL statement</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlPreparedStatement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_prepared_statement</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Wrapper class for oracle.pg.rdbms.pgql.PgqlPreparedStatement.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Executes a PGQL Query, Modify or Create/Drop operation on this instance’s property graph.</p>
+<p>Supported query options (matchOptions) are the same as those for executeQuery.</p>
+<p>Supported modify options are:</p>
+<p>STREAMING=T Use result sets instead of temporary tables to perform the update.</p>
+<p>AUTO_COMMIT=F Do not commit after performing the modify operation.</p>
+<p>DELETE_CASCADE=F Do not delete incoming/outgoing edges when deleting a vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query and update execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>match_options</strong> – additional options used to influence query translation and execution</p></li>
+<li><p><strong>options</strong> – additional options used to influence modify translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the provided PGQL query is a select, false for other statements</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">execute_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Translates this PGQL statement into a SQL statement and executes it against this instance’s property graph.</p>
+<p>Supported query options are:</p>
+<p>USE_RW=F Use CONNECT BY instead of recursive WITH for unbounded path traversals</p>
+<p>MAX_PATH_LEN=n Traverse at most n hops when evaluating unbounded path traversals</p>
+<p>EDGE_SET_PARTIAL=T Fetch properties for each start and end vertex found when reading edges from the query result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> – the number of seconds for query execution to finish</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>options</strong> – additional options used to influence query translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlResultSet object with the result of the provided PGQL query</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java List value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_boolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java boolean value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java double value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java float value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java int value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java long value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java String value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sets the designated parameter to the given Java Timestamp value.</p>
+<p>Timestamp values are assumed to be in Coordinated Universal Time (UTC).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pgql_sql_translation.html" class="btn btn-neutral float-right" title="3. Translating PGQL queries to SQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pgql_connection.html" class="btn btn-neutral float-left" title="1. Connecting using PGQL-on-RDBMS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

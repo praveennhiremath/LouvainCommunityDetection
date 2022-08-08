@@ -1,0 +1,15 @@
+PyPGX package
+=============
+
+
+.. toctree::
+
+   top_level
+   api
+   mllib
+   auth
+   filters
+   frames
+   redaction
+   pg_rdbms
+   deprecations

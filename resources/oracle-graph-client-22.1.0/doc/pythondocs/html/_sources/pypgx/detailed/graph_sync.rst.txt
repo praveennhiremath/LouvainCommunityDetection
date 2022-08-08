@@ -1,0 +1,12 @@
+Graph Synchronization
+=====================
+
+You can use the FlashbackSynchronizer API to automatically apply changes made to graph in the database to the corresponding PgxGraph object in memory, thus keeping both synchronized.
+
+.. autoclass:: pypgx.api.FlashbackSynchronizer
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.Synchronizer
+   :members:
+   :noindex:

@@ -1,0 +1,10 @@
+Retrieving PGQL-on-RDBMS results
+================================
+
+Retrieving results after executing a PGQL-on-RDBMS query can be done using the PgqlResultSet class.
+
+Please note that this functionality is different from the one included in PyPGX package. For more details look into the `PGQL on RDBMS documentation <https://docs.oracle.com/en/database/oracle/property-graph/21.3/spgjv/oracle/pg/rdbms/pgql/package-frame.html>`_.
+
+.. autoclass:: opg4py.pgql.PgqlResultSet
+   :members:
+   :noindex:

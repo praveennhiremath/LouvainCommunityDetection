@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+set -e
+
+canFail() {
+  set +e
+    $@
+  set -e
+}
+
+red=`canFail tput setaf 1`
+orange=`canFail tput setaf 3`
+bold=`canFail tput bold`
+normal=`canFail tput sgr0`
+
+warn() { echo -e "${orange}[WARNING]${normal} $1" 1>&2; }
+error() { echo -e "${red}[ERROR]${normal} $1" 1>&2; }
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # handle symlinks
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+CP="$DIR/../lib/opg-sombrero_jshell-22.1.0.jar:$DIR/../lib/*:$DIR/../conf"
+
+# Add hadoop dependencies to classpath, if available
+if [[ -n "$HADOOP_HOME" ]]; then
+    if [[ -z "$HADOOP_CONF_DIR" ]]; then
+        # Cloudera's default
+        HADOOP_CONF_DIR="$HADOOP_HOME/etc/hadoop"
+    fi
+    # Add hadoop configuration to classpath
+    CP="$CP:$HADOOP_CONF_DIR"
+fi
+
+if [[ -z "$PGX_TMP_DIR" ]]; then
+    export PGX_TMP_DIR="$DIR/../pgx/tmp_data"
+else
+    warn "PGX_TMP_DIR environment will be used for temporary data. If this is not intended, do 'unset PGX_TMP_DIR' and restart."
+fi
+
+if [[ -n "$CLASSPATH" ]]; then
+    warn "CLASSPATH environment will be prepended to PGX classpath. If this is not intended, do 'unset CLASSPATH' and restart."
+    CP="$CLASSPATH:$CP"
+fi
+
+if [[ -n "$CLASSPATH_APPEND" ]]; then
+    warn "CLASSPATH_APPEND environment will be appended to PGX classpath. If this is not intended, do 'unset CLASSPATH_APPEND' and restart."
+    CP="$CP:$CLASSPATH_APPEND"
+fi
+
+# Determine Java binary
+if [[ -z "$JAVA11_HOME" ]]; then
+    if [[ -z "$JAVA_HOME" ]]; then
+        JAVA="java "
+    else
+        JAVA="$JAVA_HOME/bin/java "
+    fi
+else
+    JAVA="$JAVA11_HOME/bin/java"
+fi
+
+# Check Java version
+if [[ "$JAVA" ]]; then
+    version=$($JAVA -version 2>&1 | awk -F '"' '/version/ {print $2}')
+    major_version=$(echo "$version" | awk -F '.' '{print $1}')
+
+    if [[ ("$major_version" -lt "11") ]]; then
+        error "Java runtime version 11 or higher is required to start the jshell-based PGX shell."
+        exit
+    fi
+fi
+
+
+# Check if --base_url is required
+if [[ $# -lt 1 || ("$1" != "--base_url" && "$1" != "-b" && "$1" != "--help" && "$1" != "-h" && "$1" != "--no_connect") ]]; then
+    error "\"--base_url\" (or \"-b\") is a required argument when connecting to the PGX server using the remote shell, alternatively use \"--no_connect\" to skip PGX server connection"
+    exit
+fi
+
+# Launch shell
+JAVA_OPTS="-Doracle.jdbc.fanEnabled=false $JAVA_OPTS"
+$JAVA $JAVA_OPTS --add-opens java.base/java.lang=ALL-UNNAMED -cp "$CP:$OPG_CLASSPATH" oracle.pg.jshell.SombreroShell "$@"
+
+# Return the program's exit code
+exit $?

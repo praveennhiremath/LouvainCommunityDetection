@@ -1,0 +1,8 @@
+Managing Graphs
+===============
+
+The PgxGraph class can be used to manage and execute operations on the underlying graph.
+
+.. autoclass:: pypgx.api.PgxGraph
+   :members:
+   :noindex:

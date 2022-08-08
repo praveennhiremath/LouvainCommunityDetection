@@ -1,0 +1,9 @@
+.. _api-filters:
+
+Graph Filters
+===================
+
+.. automodule:: pypgx.api.filters
+   :members:
+   :show-inheritance:
+   :inherited-members:

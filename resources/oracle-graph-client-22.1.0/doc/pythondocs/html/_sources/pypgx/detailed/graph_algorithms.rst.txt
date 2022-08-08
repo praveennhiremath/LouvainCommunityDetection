@@ -1,0 +1,8 @@
+Graph algorithms
+================
+
+The Analyst class can be used to execute algorithms on a given graph.
+
+.. autoclass:: pypgx.api.Analyst
+   :members:
+   :noindex:

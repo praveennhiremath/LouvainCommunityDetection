@@ -1,0 +1,12 @@
+Translating PGQL queries to SQL
+===============================
+
+The following classes can be used to translate the underlying PGQL query into the corresponding SQL query.
+
+.. autoclass:: opg4py.pgql.PgqlSqlTrans
+   :members:
+   :noindex:
+
+.. autoclass:: opg4py.pgql.PgqlSqlQueryTrans
+   :members:
+   :noindex:

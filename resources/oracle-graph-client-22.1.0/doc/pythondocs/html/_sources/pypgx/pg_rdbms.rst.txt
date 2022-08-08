@@ -1,0 +1,6 @@
+Graph Server
+===================
+
+.. automodule:: pypgx.pg.rdbms
+   :members:
+   :show-inheritance:

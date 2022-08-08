@@ -1,0 +1,8 @@
+Managing the Server
+===================
+
+The ServerInstance class can be used to perform some server management actions.
+
+.. autoclass:: pypgx.api.ServerInstance
+   :members:
+   :noindex:

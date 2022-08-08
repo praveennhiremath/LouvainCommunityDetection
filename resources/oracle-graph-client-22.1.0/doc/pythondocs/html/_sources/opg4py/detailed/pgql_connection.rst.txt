@@ -1,0 +1,13 @@
+Connecting using PGQL-on-RDBMS
+==============================
+
+To connect using DB credentials directly the following convenience method can be used, otherwise a JDBC connection object needs to be provided.
+
+.. automethod:: opg4py.pgql.get_connection
+   :noindex:
+
+Connecting to PGQL-on-RDBMS involves getting a connection object, that allows further operations such as creating a statement or retrieving metadata on the underlying JDBC connection.
+
+.. autoclass:: opg4py.pgql.PgqlConnection
+   :members:
+   :noindex:

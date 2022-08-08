@@ -1,0 +1,12 @@
+Creating a PGQL-on-RDBMS statement
+==================================
+
+The following classes can be used to create PGQL statements and prepared statements accordingly.
+
+.. autoclass:: opg4py.pgql.PgqlStatement
+   :members:
+   :noindex:
+
+.. autoclass:: opg4py.pgql.PgqlPreparedStatement
+   :members:
+   :noindex:

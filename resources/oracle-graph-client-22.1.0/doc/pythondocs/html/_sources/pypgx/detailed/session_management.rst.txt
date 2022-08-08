@@ -1,0 +1,8 @@
+Managing Sessions
+=================
+
+The PgxSession class can be used to manage and execute operations on the underlying session.
+
+.. autoclass:: pypgx.api.PgxSession
+   :members:
+   :noindex:

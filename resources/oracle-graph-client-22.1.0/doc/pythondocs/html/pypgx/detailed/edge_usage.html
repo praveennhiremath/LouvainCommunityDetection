@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>8. Dealing with Edges &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9. Using Frames" href="frames_usage.html" />
+    <link rel="prev" title="7. Dealing with Vertices" href="vertex_usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/index.html">OPG4Py package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using PyPGX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_management.html">2. Managing the Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session_management.html">3. Managing Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_management.html">4. Managing Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_algorithms.html">5. Graph algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgql_results.html">6. Using PGQL results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vertex_usage.html">7. Dealing with Vertices</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. Dealing with Edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frames_usage.html">9. Using Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_sync.html">10. Graph Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">11. Others…</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">PyPGX package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Using PyPGX</a> &raquo;</li>
+        
+      <li><span class="section-number">8. </span>Dealing with Edges</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/pypgx/detailed/edge_usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dealing-with-edges">
+<h1><span class="section-number">8. </span>Dealing with Edges<a class="headerlink" href="#dealing-with-edges" title="Permalink to this headline">¶</a></h1>
+<p>There are several operations that can be performed directly on the edges of a graph.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.</span></span><span class="sig-name descname"><span class="pre">EdgeCollection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_collection</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A collection of edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Add one or multiple edges to the collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>e</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>, </em><em>Iterable</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>]</em><em>]</em><em>]</em>) – Edge or edge id. Can also be an iterable of edge/edge ids.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Add multiple vertices to the collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>edges</strong> (<em>Iterable</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>]</em><em>]</em>) – Iterable of edges/edges ids</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Check if the collection contains edge e.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>e</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>]</em>) – PgxEdge object or id:</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Remove one or multiple edges from the collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>e</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>, </em><em>Iterable</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>]</em><em>]</em><em>]</em>) – Edges or edges id. Can also be an iterable of edges/edges ids.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">remove_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Remove multiple edges from the collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>edges</strong> (<em>Iterable</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>]</em><em>]</em>) – Iterable of edges/edges ids</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.</span></span><span class="sig-name descname"><span class="pre">EdgeLabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_label</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Class for storing a label type edge property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.</span></span><span class="sig-name descname"><span class="pre">EdgeProperty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_prop</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>An edge property of a <a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxGraph</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>]</em>) – The key (vertex/edge) whose property to get</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set a property value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge"><em>pypgx.api._pgx_entity.PgxEdge</em></a><em>, </em><em>int</em><em>]</em>) – The key (vertex/edge) whose property to set</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – The property value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Set the labels values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>values</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxMap" title="pypgx.api.PgxMap"><em>PgxMap</em></a>) – pgxmap with ids and values</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.</span></span><span class="sig-name descname"><span class="pre">EdgeSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_collection</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>An ordered sequence of edges which may contain duplicates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.</span></span><span class="sig-name descname"><span class="pre">EdgeSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_collection</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>An unordered set of edges (no duplicates).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><em>PgxGraph</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="frames_usage.html" class="btn btn-neutral float-right" title="9. Using Frames" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vertex_usage.html" class="btn btn-neutral float-left" title="7. Dealing with Vertices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

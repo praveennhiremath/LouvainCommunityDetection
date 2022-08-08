@@ -1,0 +1,74 @@
+Others...
+=========
+
+.. autoclass:: pypgx.api.AllPaths
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.BipartiteGraph
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.CompiledProgram
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.GraphAlterationBuilder
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.MatrixFactorizationModel
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.MergingStrategyBuilder
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.MutationStrategyBuilder
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.Namespace
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.Pgx
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.PgxCollection
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.PgxEntity
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.PgxMap
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.PgxPath
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.PickingStrategyBuilder
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.Scalar
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.ScalarCollection
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.ScalarSequence
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.ScalarSet
+   :members:
+   :noindex:

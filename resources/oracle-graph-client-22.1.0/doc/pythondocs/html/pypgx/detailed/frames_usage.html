@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>9. Using Frames &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10. Graph Synchronization" href="graph_sync.html" />
+    <link rel="prev" title="8. Dealing with Edges" href="edge_usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/index.html">OPG4Py package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using PyPGX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_management.html">2. Managing the Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session_management.html">3. Managing Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_management.html">4. Managing Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_algorithms.html">5. Graph algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgql_results.html">6. Using PGQL results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vertex_usage.html">7. Dealing with Vertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edge_usage.html">8. Dealing with Edges</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9. Using Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_sync.html">10. Graph Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">11. Others…</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">PyPGX package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Using PyPGX</a> &raquo;</li>
+        
+      <li><span class="section-number">9. </span>Using Frames</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/pypgx/detailed/frames_usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-frames">
+<h1><span class="section-number">9. </span>Using Frames<a class="headerlink" href="#using-frames" title="Permalink to this headline">¶</a></h1>
+<p>The PgxFrame class can be used to perform operations on a given frame.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_frame</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Data-structure to load/store and manipulate tabular data.</p>
+<p>It contains rows and columns. A PgxFrame can contain multiple columns where each column
+consist of elements of the same data type, and has a name. The list of the columns
+with their names and data types defines the schema of the frame.
+(The number of rows in the PgxFrame is not part of the schema of the frame.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create a new PgxFrame with the same content as the current frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Free resources on the server taken up by this frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em></dt>
+<dd><p>Get the names of the columns contained in the PgxFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Count number of elements in the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Free resources on the server taken up by this frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new PgxFrame with all the specified columns and vector columns flattened into
+multiple columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>str</em>) – Column names</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">flatten_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new PgxFrame with all nested columns and vector columns flattened into multiple
+columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return a PgxFrameColumn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Column name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrameColumn</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrameColumn" title="pypgx.api.frames._pgx_frame.PgxFrameColumn">pypgx.api.frames._pgx_frame.PgxFrameColumn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_column_descriptors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return a list containing the description of the different columns of the frames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Tuple[str, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return the first num_rows elements of the frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_rows</strong> (<em>int</em>) – Number of rows to take</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_key_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_join_key_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_join_key_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new PgxFrame by performing a join operation.</p>
+<blockquote>
+<div><p>Create a new PgxFrame by adding the columns of the right frame to this frame, aligned on
+equality of entries in column left_join_key_column for this frame and column
+right_join_key_column for the right frame, or join_key_columns on both frames. The
+resulting frame will contain the columns of this frame prefixed by left_prefix and the
+columns of right frame prefixed by right_prefix (if the prefixes are not null). Prefixes
+must ether not be set or both be set.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>right</strong> (<a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><em>pypgx.api.frames._pgx_frame.PgxFrame</em></a>) – PgxFrame whose columns will be added to the columns of this PgxFrame</p></li>
+<li><p><strong>join_key_column</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Column of both frames on which the equality test will be performed</p></li>
+<li><p><strong>left_join_key_column</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Column of this frame on which the equality test will be
+performed with right_join_key_column</p></li>
+<li><p><strong>right_join_key_column</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Column of right frame on which the equality test will be
+performed with leftJoinKeyColumn</p></li>
+<li><p><strong>left_prefix</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Prefix of the columns name of this frame in the resulting frame</p></li>
+<li><p><strong>right_prefix</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Prefix of the columns name of right frame in the resulting frame</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
+<dd><p>Return the number of rows in the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of rows</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Print the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> (<em>Optional</em><em>[</em><em>TextIO</em><em>]</em>) – File to which results are printed (default is <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>)</p></li>
+<li><p><strong>num_results</strong> (<em>int</em>) – Number of results to be printed</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – Index of the first result to be printed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return a PgxFrame with the column name modified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>old_column_name</strong> (<em>str</em>) – name of the column to rename</p></li>
+<li><p><strong>new_column_name</strong> (<em>str</em>) – name of the column after the operation</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_renaming</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return a PgxFrame with the column name modified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_renaming</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – dict-like holding old_column names as keys and new column names as
+values</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Select multiple columns by column name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>str</em>) – Column names</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Store the frame in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path where to store the frame</p></li>
+<li><p><strong>file_format</strong> (<em>str</em>) – Storage format</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Overwrite current file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">tail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return the last num_rows elements of the frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_rows</strong> (<em>int</em>) – Number of rows to take</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Convert to pandas DataFrame.</p>
+<p>This method may change result_set cursor.</p>
+<p>This method requires pandas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame as a Pandas Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">to_pgql_result_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create a new PgqlResultSet having the same content as this frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgqlResultSet</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgqlResultSet" title="pypgx.api._pgql_result_set.PgqlResultSet">pypgx.api._pgql_result_set.PgqlResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a PgxFrame by concatenating the rows of this frame with the rows of the
+frames in frames. The different frames should have the same columns (same names, types and
+dimensions), in the same order. The resulting frame is not guaranteed to have any specific
+ordering of its rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frames</strong> (<a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><em>pypgx.api.frames._pgx_frame.PgxFrame</em></a>) – Frames tu add through union</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get Pgx Frame storer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxGenericFrameStorer</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../frames.html#pypgx.api.frames.PgxGenericFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="graph_sync.html" class="btn btn-neutral float-right" title="10. Graph Synchronization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="edge_usage.html" class="btn btn-neutral float-left" title="8. Dealing with Edges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

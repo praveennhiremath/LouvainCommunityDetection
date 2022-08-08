@@ -1,0 +1,8 @@
+Using Frames
+============
+
+The PgxFrame class can be used to perform operations on a given frame.
+
+.. autoclass:: pypgx.api.frames.PgxFrame
+   :members:
+   :noindex:

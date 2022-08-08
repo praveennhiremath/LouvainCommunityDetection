@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+set -e
+
+canFail() {
+  set +e
+    $@
+  set -e
+}
+
+red=`canFail tput setaf 1`
+orange=`canFail tput setaf 3`
+bold=`canFail tput bold`
+normal=`canFail tput sgr0`
+
+warn() { echo -e "${orange}[WARNING]${normal} $1" 1>&2; }
+error() { echo -e "${red}[ERROR]${normal} $1" 1>&2; }
+
+# Determine directory of this script
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # handle symlinks
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# Determine classpath
+CP="$DIR/../lib/*:$DIR/../conf"
+
+# Add hadoop dependencies to classpath, if available
+if [[ -n "$HADOOP_HOME" ]]; then
+    if [[ -z "$HADOOP_CONF_DIR" ]]; then
+        # Cloudera's default
+        HADOOP_CONF_DIR="$HADOOP_HOME/etc/hadoop"
+    fi
+    # Add hadoop configuration to classpath
+    CP="$CP:$HADOOP_CONF_DIR"
+fi
+
+if [[ -n "$CLASSPATH" ]]; then
+    warn "CLASSPATH environment will be prepended to PGX classpath. If this is not intended, do 'unset CLASSPATH' and restart."
+    CP="$CLASSPATH:$CP"
+fi
+
+if [[ -n "$CLASSPATH_APPEND" ]]; then
+    warn "CLASSPATH_APPEND environment will be appended to PGX classpath. If this is not intended, do 'unset CLASSPATH_APPEND' and restart."
+    CP="$CP:$CLASSPATH_APPEND"
+fi
+
+export OPG_CLASSPATH=$CP
+
+VENVLIB="$DIR/../venv/lib/python3.*/site-packages"
+VENVLIB="$(echo $VENVLIB)"  # expand '*' in $VENVLIB (glob matching)
+PYTHONDIR="$DIR/../python"
+export PYTHONPATH="$VENVLIB:$PYTHONDIR:$PYTHONPATH"
+
+
+# Check if --base_url is required
+if [[ $# -lt 1 || ("$1" != "--base_url" && "$1" != "-b" && "$1" != "--help" && "$1" != "-h" && "$1" != "--no_connect") ]]; then
+    error "\"--base_url\" (or \"-b\") is a required argument when connecting to the PGX server using the remote shell, alternatively use \"--no_connect\" to skip PGX server connection"
+    exit
+fi
+
+# Launch shell
+if [ -x "$(command -v ipython3)" ]; then
+  ipython3 -i $DIR/../python/pypgx/shell.py -- "$@"
+else
+  python3 -i $DIR/../python/pypgx/shell.py "$@"
+fi
+
+# Return the program's exit code
+exit $?

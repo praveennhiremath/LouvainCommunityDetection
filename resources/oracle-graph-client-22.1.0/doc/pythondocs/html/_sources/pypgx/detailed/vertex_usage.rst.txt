@@ -1,0 +1,24 @@
+Dealing with Vertices
+=====================
+
+There are several operations that can be performed directly on the vertices of a graph.
+
+.. autoclass:: pypgx.api.VertexCollection
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.VertexLabels
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.VertexProperty
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.VertexSequence
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.VertexSet
+   :members:
+   :noindex:

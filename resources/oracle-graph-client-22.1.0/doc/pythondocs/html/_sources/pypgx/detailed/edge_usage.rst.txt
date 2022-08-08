@@ -1,0 +1,24 @@
+Dealing with Edges
+==================
+
+There are several operations that can be performed directly on the edges of a graph.
+
+.. autoclass:: pypgx.api.EdgeCollection
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.EdgeLabel
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.EdgeProperty
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.EdgeSequence
+   :members:
+   :noindex:
+
+.. autoclass:: pypgx.api.EdgeSet
+   :members:
+   :noindex:

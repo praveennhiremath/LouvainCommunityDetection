@@ -1,0 +1,1181 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>OPG4Py Pgql &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using PyPGX" href="../pypgx/detailed/index.html" />
+    <link rel="prev" title="OPG4Py package" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OPG4Py package</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OPG4Py Pgql</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pypgx/detailed/index.html">Using PyPGX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pypgx/index.html">PyPGX package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">OPG4Py package</a> &raquo;</li>
+        
+      <li>OPG4Py Pgql</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/opg4py/pgql.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-opg4py.pgql">
+<span id="opg4py-pgql"></span><h1>OPG4Py Pgql<a class="headerlink" href="#module-opg4py.pgql" title="Permalink to this headline">¶</a></h1>
+<p>Python API for the PGQL-on-RDBMS client.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper class for oracle.pg.rdbms.pgql.PgqlConnection.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free the resources of the internal JDBC connection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.create_statement">
+<span class="sig-name descname"><span class="pre">create_statement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.create_statement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new PgqlStatement object, which is used to execute PGQL queries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a new PgqlStatement object that can be used to perform PGQL queries</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.get_connection">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_sql_connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.get_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory method to get PgqlConnection instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>java_sql_connection</strong> – a JDBC connection</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlConnection instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.get_graph">
+<span class="sig-name descname"><span class="pre">get_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.get_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph name on which PGQL queries will be executed for this connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the graph name for this connection</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.get_jdbc_connection">
+<span class="sig-name descname"><span class="pre">get_jdbc_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.get_jdbc_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the JDBC connection that is used to execute PGQL queries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the connection</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.get_schema">
+<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.get_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the schema name that will be used to execute PGQL queries with this connection.</p>
+<p>If the schema has not been set, the schema from JDBC connection is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the schema set for this connection</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a database access error occurs or this method is called on a closed connection</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.prepare_statement">
+<span class="sig-name descname"><span class="pre">prepare_statement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.prepare_statement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new PgqlPreparedStatement object, which represents a pre-compiled PGQL statement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql</strong> – the PGQL query to compile</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlPreparedStatement object that can be used to efficiently execute the same query multiple times</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.set_graph">
+<span class="sig-name descname"><span class="pre">set_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.set_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the graph name on which PGQL queries will be executed for this connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> – the name of the graph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlConnection.set_schema">
+<span class="sig-name descname"><span class="pre">set_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlConnection.set_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the schema name that will be used to execute PGQL queries with this connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>schema</strong> – the name of the schema</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlPreparedStatement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_prepared_statement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opg4py.pgql.PgqlStatement" title="opg4py.pgql._pgql_statement.PgqlStatement"><code class="xref py py-class docutils literal notranslate"><span class="pre">opg4py.pgql._pgql_statement.PgqlStatement</span></code></a></p>
+<p>Wrapper class for oracle.pg.rdbms.pgql.PgqlPreparedStatement.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a PGQL Query, Modify or Create/Drop operation on this instance’s property graph.</p>
+<p>Supported query options (matchOptions) are the same as those for executeQuery.</p>
+<p>Supported modify options are:</p>
+<p>STREAMING=T Use result sets instead of temporary tables to perform the update.</p>
+<p>AUTO_COMMIT=F Do not commit after performing the modify operation.</p>
+<p>DELETE_CASCADE=F Do not delete incoming/outgoing edges when deleting a vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query and update execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>match_options</strong> – additional options used to influence query translation and execution</p></li>
+<li><p><strong>options</strong> – additional options used to influence modify translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the provided PGQL query is a select, false for other statements</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.execute_query">
+<span class="sig-name descname"><span class="pre">execute_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.execute_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates this PGQL statement into a SQL statement and executes it against this instance’s property graph.</p>
+<p>Supported query options are:</p>
+<p>USE_RW=F Use CONNECT BY instead of recursive WITH for unbounded path traversals</p>
+<p>MAX_PATH_LEN=n Traverse at most n hops when evaluating unbounded path traversals</p>
+<p>EDGE_SET_PARTIAL=T Fetch properties for each start and end vertex found when reading edges from the query result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> – the number of seconds for query execution to finish</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>options</strong> – additional options used to influence query translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlResultSet object with the result of the provided PGQL query</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_array">
+<span class="sig-name descname"><span class="pre">set_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java List value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_boolean">
+<span class="sig-name descname"><span class="pre">set_boolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java boolean value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_double">
+<span class="sig-name descname"><span class="pre">set_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java double value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_float">
+<span class="sig-name descname"><span class="pre">set_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java float value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_int">
+<span class="sig-name descname"><span class="pre">set_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java int value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_long">
+<span class="sig-name descname"><span class="pre">set_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_long" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java long value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_string">
+<span class="sig-name descname"><span class="pre">set_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java String value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlPreparedStatement.set_timestamp">
+<span class="sig-name descname"><span class="pre">set_timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlPreparedStatement.set_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the designated parameter to the given Java Timestamp value.</p>
+<p>Timestamp values are assumed to be in Coordinated Universal Time (UTC).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param_index</strong> – the first parameter is 1, the second is 2, …</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>value: the parameter value</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlResultSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_result_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper class for oracle.pg.rdbms.pgql.PgqlResultSet.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.absolute">
+<span class="sig-name descname"><span class="pre">absolute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.absolute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the cursor to the given row number in this ResultSet object.</p>
+<p>If the row number is positive, the cursor moves to the given row number with respect to the
+beginning of the result set. The first row is 1, so absolute(1) moves the cursor to the
+first row.</p>
+<p>If the row number is negative, the cursor moves to the given row number with respect to the
+end of the result set. So absolute(-1) moves the cursor to the last row.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>row</strong> – Row to move to</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the cursor is moved to a position in the ResultSet object;
+False if the cursor is moved before the first or after the last row</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.after_last">
+<span class="sig-name descname"><span class="pre">after_last</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.after_last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place the cursor after the last row.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.before_first">
+<span class="sig-name descname"><span class="pre">before_first</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.before_first" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the cursor before the first row.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free resources on the server taken up by this result_set object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.first">
+<span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.first" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the cursor to the first row in the result set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the cursor points to a valid row; False if the result set does not have any results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or string representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Content of cell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_boolean">
+<span class="sig-name descname"><span class="pre">get_boolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a Boolean.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_date">
+<span class="sig-name descname"><span class="pre">get_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a datetime Date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>datetime.date</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_float">
+<span class="sig-name descname"><span class="pre">get_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a Float.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_integer">
+<span class="sig-name descname"><span class="pre">get_integer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as an Integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_list">
+<span class="sig-name descname"><span class="pre">get_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a List.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_metadata">
+<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ResultSet MetaData.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgqlResultSetMetaData</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_row">
+<span class="sig-name descname"><span class="pre">get_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get row from result_set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>row</strong> – Row index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_slice">
+<span class="sig-name descname"><span class="pre">get_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get slice from result_set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – Start index</p></li>
+<li><p><strong>stop</strong> – Stop index</p></li>
+<li><p><strong>step</strong> – Step size</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_string">
+<span class="sig-name descname"><span class="pre">get_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a String.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_time">
+<span class="sig-name descname"><span class="pre">get_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a datetime Time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>datetime.time</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_time_with_timezone">
+<span class="sig-name descname"><span class="pre">get_time_with_timezone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_time_with_timezone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a datetime Time with timezone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>datetime.time</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_timestamp">
+<span class="sig-name descname"><span class="pre">get_timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a Datetime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_timestamp_with_timezone">
+<span class="sig-name descname"><span class="pre">get_timestamp_with_timezone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_timestamp_with_timezone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a Datetime with timezone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_value_type">
+<span class="sig-name descname"><span class="pre">get_value_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_value_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the type of value of the designated element by element index or name as an Integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.get_vertex_labels">
+<span class="sig-name descname"><span class="pre">get_vertex_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.get_vertex_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the designated element by element index or name as a list of labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> – Integer or String representing index or name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.last">
+<span class="sig-name descname"><span class="pre">last</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the cursor to the last row in the result set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the cursor points to a valid row; False if the result set does not have any results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the cursor forward one row from its current position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the cursor points to a valid row; False if the new cursor is positioned after the last row</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.previous">
+<span class="sig-name descname"><span class="pre">previous</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the cursor to the previous row from its current position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the cursor points to a valid row; False if the new cursor is positioned before the first row</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the result set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – File to which results are printed (default is <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>)</p></li>
+<li><p><strong>num_results</strong> – Number of results to be printed</p></li>
+<li><p><strong>start</strong> – Index of the first result to be printed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.relative">
+<span class="sig-name descname"><span class="pre">relative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.relative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the cursor a relative number of row with respect to the current position.</p>
+<p>Note a negative number will move the cursor backwards.</p>
+<p>Note: Calling relative(1) is equal to next() and relative(-1) is equal to previous. Calling
+relative(0) is possible when the cursor is positioned at a row, not when it is positioned
+before the first or after the last row. However, relative(0) will not update the position of
+the cursor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rows</strong> – Relative number of rows to move from current position</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the cursor is moved to a position in the ResultSet object;
+False if the cursor is moved before the first or after the last row</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSet.to_pandas">
+<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSet.to_pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert to pandas DataFrame (this method requires pandas).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgqlResultSet as a Pandas Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSetMetaData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlResultSetMetaData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_result_set_metadata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSetMetaData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper class for oracle.pgql.lang.ResultSetMetaData.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSetMetaData.get_column_count">
+<span class="sig-name descname"><span class="pre">get_column_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSetMetaData.get_column_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the total number of columns in the query result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the total number of columns</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlResultSetMetaData.get_column_name">
+<span class="sig-name descname"><span class="pre">get_column_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlResultSetMetaData.get_column_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of the column at the given offset starting from 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column</strong> – the offset of the column, numbering starts from 1</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the column name</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlSqlQueryTrans">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlSqlQueryTrans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_sql_query_trans</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlSqlQueryTrans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opg4py.pgql.PgqlSqlTrans" title="opg4py.pgql._pgql_sql_trans.PgqlSqlTrans"><code class="xref py py-class docutils literal notranslate"><span class="pre">opg4py.pgql._pgql_sql_trans.PgqlSqlTrans</span></code></a></p>
+<p>Wrapper class for oracle.pg.rdbms.pgql.PgqlSqlQueryTrans.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlSqlQueryTrans.get_return_types">
+<span class="sig-name descname"><span class="pre">get_return_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlSqlQueryTrans.get_return_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an array of column descriptors for the result columns in the query result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result column descriptions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlSqlQueryTrans.get_sql_bv_list">
+<span class="sig-name descname"><span class="pre">get_sql_bv_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlSqlQueryTrans.get_sql_bv_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of Bind Values to be used with this SQL translation.</p>
+<p>The first element in the list should be set at position 1 in a JDBC PreparedStatement created from this
+SQL translation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the list of bind values for this query translation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlSqlQueryTrans.get_sql_translation">
+<span class="sig-name descname"><span class="pre">get_sql_translation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlSqlQueryTrans.get_sql_translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the SQL string for the PGQL to SQL translation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the SQL query string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlSqlTrans">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlSqlTrans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_sql_trans</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlSqlTrans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper class for oracle.pg.rdbms.pgql.PgqlSqlTrans.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlSqlTrans.get_translation_type">
+<span class="sig-name descname"><span class="pre">get_translation_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlSqlTrans.get_translation_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the type for the PGQL to SQL translation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a PgqlSqlTrans.TranslationType object with the SQL translation type</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">PgqlStatement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgql_statement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper class for oracle.pg.rdbms.pgql.PgqlStatement.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.cancel">
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows to cancel currently running execute operation.</p>
+<p>Note that cancel does not rollback already executed modifications.</p>
+<p>Throws: oracle.pgql.lang.PgqlException - When an error occurs while canceling current operation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Releases this PgqlStatment’s database and JDBC resources.</p>
+<p>Closing this PgqlStatement will close all PgqlResultSets that were created from it.</p>
+<p>Throws: oracle.pgql.lang.PgqlException</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a PGQL Query, Modify or Create/Drop operation on this instance’s property graph.</p>
+<p>Supported query options (matchOptions) are the same as those for executeQuery.</p>
+<p>Supported modify options are:</p>
+<p>STREAMING=T Use result sets instead of temporary tables to perform the update.</p>
+<p>AUTO_COMMIT=F Do not commit after performing the modify operation.</p>
+<p>DELETE_CASCADE=F Do not delete incoming/outgoing edges when deleting a vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL modify to execute</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query and update execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>match_options</strong> – additional options used to influence query translation and execution</p></li>
+<li><p><strong>options</strong> – additional options used to influence modify translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the provided PGQL query is a select, false for other statements</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.execute_query">
+<span class="sig-name descname"><span class="pre">execute_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.execute_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates this PGQL statement into a SQL statement and executes it against this instance’s property graph.</p>
+<p>Supported query options are:</p>
+<p>USE_RW=F Use CONNECT BY instead of recursive WITH for unbounded path traversals</p>
+<p>MAX_PATH_LEN=n Traverse at most n hops when evaluating unbounded path traversals</p>
+<p>EDGE_SET_PARTIAL=T Fetch properties for each start and end vertex found when reading edges from the query result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL query to execute</p></li>
+<li><p><strong>timeout</strong> – the number of seconds for query execution to finish</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>options</strong> – additional options used to influence query translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlResultSet object with the result of the provided PGQL query</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation or SQL execution
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.get_batch_size">
+<span class="sig-name descname"><span class="pre">get_batch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.get_batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of commands that should be batched when executing updates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the update batch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.get_fetch_size">
+<span class="sig-name descname"><span class="pre">get_fetch_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.get_fetch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of rows that should be fetched from the database when more rows are needed for a query result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the query fetch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.get_modify_count">
+<span class="sig-name descname"><span class="pre">get_modify_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.get_modify_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of rows that were modified by last execute operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of rows modified</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.get_result_set">
+<span class="sig-name descname"><span class="pre">get_result_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.get_result_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the current result as a PgqlResultSet object.</p>
+<p>This method should be called only once per result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Current result as a ResultSet object or null if the query is not a SELECT query</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.set_batch_size">
+<span class="sig-name descname"><span class="pre">set_batch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.set_batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of commands that should be batched when executing updates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_size</strong> – the update batch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.set_fetch_size">
+<span class="sig-name descname"><span class="pre">set_fetch_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fetch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.set_fetch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of rows that should be fetched from the database when more rows are needed for a query result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fetch_size</strong> – the query fetch size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.translate_query">
+<span class="sig-name descname"><span class="pre">translate_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.translate_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates this instance’s PGQL statement into a SQL statement.</p>
+<p>Supported query options are:</p>
+<p>USE_RW=F Use CONNECT BY instead of recursive WITH for unbounded path traversals</p>
+<p>MAX_PATH_LEN=n Traverse at most n hops when evaluating unbounded path traversals</p>
+<p>EDGE_SET_PARTIAL=T Fetch properties for each start and end vertex found when reading edges from the query result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL query to translate</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>options</strong> – additional options used to influence query translation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a PgqlSqlTrans object with the SQL translation and column metadata for the provided PGQL query</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opg4py.pgql.PgqlStatement.translate_statement">
+<span class="sig-name descname"><span class="pre">translate_statement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.PgqlStatement.translate_statement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates the given PGQL statement into a series of SQL statements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pgql</strong> – the PGQL statement to translate</p></li>
+<li><p><strong>parallel</strong> – the degree of parallelism to use for query execution</p></li>
+<li><p><strong>dynamic_sampling</strong> – the value for dynamic sampling</p></li>
+<li><p><strong>max_results</strong> – the maximum number of rows returned</p></li>
+<li><p><strong>match_options</strong> – additional options used to influence query translation and execution</p></li>
+<li><p><strong>options</strong> – additional options used to influence DDL/DML translation and execution</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the SQL statements and metadata necessary to execute the provided SQL statement</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Throws:</dt><dd><p>PgqlToSqlException - if a server-side error occurs during translation
+oracle.pgql.lang.PgqlException - if a server-side error occurs or method is called on a closed Statement</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opg4py.pgql.get_connection">
+<span class="sig-prename descclassname"><span class="pre">opg4py.pgql.</span></span><span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pwd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jdbc_url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opg4py.pgql.get_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a DB connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usr</strong> – the DB user</p></li>
+<li><p><strong>pwd</strong> – the DB password</p></li>
+<li><p><strong>jdbc_url</strong> – the DB jdbc url</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A PgqlConnection</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../pypgx/detailed/index.html" class="btn btn-neutral float-right" title="Using PyPGX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="OPG4Py package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

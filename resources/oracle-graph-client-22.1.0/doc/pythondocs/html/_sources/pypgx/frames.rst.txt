@@ -1,0 +1,9 @@
+.. _api-frames:
+
+Frames
+===================
+
+.. automodule:: pypgx.api.frames
+   :members:
+   :show-inheritance:
+   :inherited-members:

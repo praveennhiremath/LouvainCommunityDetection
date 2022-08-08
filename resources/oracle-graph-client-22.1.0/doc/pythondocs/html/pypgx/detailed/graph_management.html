@@ -1,0 +1,1690 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4. Managing Graphs &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Graph algorithms" href="graph_algorithms.html" />
+    <link rel="prev" title="3. Managing Sessions" href="session_management.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opg4py/index.html">OPG4Py package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using PyPGX</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">1. Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_management.html">2. Managing the Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session_management.html">3. Managing Sessions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Managing Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_algorithms.html">5. Graph algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgql_results.html">6. Using PGQL results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vertex_usage.html">7. Dealing with Vertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edge_usage.html">8. Dealing with Edges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frames_usage.html">9. Using Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_sync.html">10. Graph Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">11. Others…</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">PyPGX package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Using PyPGX</a> &raquo;</li>
+        
+      <li><span class="section-number">4. </span>Managing Graphs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/pypgx/detailed/graph_management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-graphs">
+<h1><span class="section-number">4. </span>Managing Graphs<a class="headerlink" href="#managing-graphs" title="Permalink to this headline">¶</a></h1>
+<p>The PgxGraph class can be used to manage and execute operations on the underlying graph.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.</span></span><span class="sig-name descname"><span class="pre">PgxGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">java_graph</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>A reference to a graph on the server side.</p>
+<p>Operations on instances of this class are executed on the server side onto the referenced
+graph. Note that a session can have multiple objects referencing the same graph: the result
+of any operation mutating the graph on any of those references will be visible on all of them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>session</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxSession" title="pypgx.api.PgxSession"><em>PgxSession</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add_redaction_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">redaction_rule_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authorization_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Add a redaction rule for <cite>authorization_type</cite> names.</p>
+<p>Possible authorization types are: [‘user’, ‘role’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>authorization_type</strong> (<em>str</em>) – the authorization type of the rule to be added</p></li>
+<li><p><strong>names</strong> (<em>str</em>) – the names of the users or roles for which the rule should be added</p></li>
+<li><p><strong>redaction_rule_config</strong> (<a class="reference internal" href="../redaction.html#pypgx.api.redaction.PgxRedactionRuleConfig" title="pypgx.api.redaction._redaction_rule_config.PgxRedactionRuleConfig"><em>pypgx.api.redaction._redaction_rule_config.PgxRedactionRuleConfig</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">alter_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create a graph alteration builder to define the graph schema alterations to perform on
+the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an empty graph alteration builder</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.GraphAlterationBuilder" title="pypgx.api._graph_alteration_builder.GraphAlterationBuilder">pypgx.api._graph_alteration_builder.GraphAlterationBuilder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">bipartite_sub_graph_from_in_degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_left_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a bipartite version of this graph with all vertices of in-degree = 0 being the
+left set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_properties</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>]</em><em>, </em><em>bool</em><em>]</em>) – List of vertex properties belonging to
+graph specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>bool</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – New graph name</p></li>
+<li><p><strong>is_left_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the boolean isLeft vertex property of
+the new graph. If None, a name will be generated.</p></li>
+<li><p><strong>in_place</strong> (<em>bool</em>) – Whether to create a new copy (False) or overwrite this
+graph (True)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.BipartiteGraph" title="pypgx.api._pgx_graph.BipartiteGraph">pypgx.api._pgx_graph.BipartiteGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">bipartite_sub_graph_from_left_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_left_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a bipartite version of this graph with the given vertex set being the left set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vset</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../api.html#pypgx.api.VertexSet" title="pypgx.api._pgx_collection.VertexSet"><em>pypgx.api._pgx_collection.VertexSet</em></a><em>]</em>) – Vertex set representing the left side</p></li>
+<li><p><strong>vertex_properties</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>]</em><em>, </em><em>bool</em><em>]</em>) – List of vertex properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>bool</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – name of the new graph. If None, a name will be generated.</p></li>
+<li><p><strong>is_left_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the boolean isLeft vertex property of
+the new graph. If None, a name will be generated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.BipartiteGraph" title="pypgx.api._pgx_graph.BipartiteGraph">pypgx.api._pgx_graph.BipartiteGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return a copy of this graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_properties</strong> (<em>bool</em>) – List of vertex properties belonging to graph
+specified to be cloned as well</p></li>
+<li><p><strong>edge_properties</strong> (<em>bool</em>) – List of edge properties belonging to graph
+specified to be cloned as well</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the new graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clone_and_execute_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a deep copy of the graph, and execute on it the pgql query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A cloned PgxGraph with the pgql query executed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>throws InterruptedException if the caller thread gets interrupted while waiting for</dt><dd><p>completion.</p>
+</dd>
+<dt>throws ExecutionException   if any exception occurred during asynchronous execution.</dt><dd><p>The actual exception will be nested.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Destroy without waiting for completion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">combine_edge_properties_into_vector_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">properties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Take a list of scalar edge properties of same type and create a new edge vector
+property by combining them.</p>
+<p>The dimension of the vector property will be equals to the number of properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>properties</strong> (<em>List</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty"><em>pypgx.api._property.EdgeProperty</em></a><em>, </em><em>str</em><em>]</em><em>]</em>) – List of scalar edge properties</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name for the vector property. If not null, vector
+property will be named. If that results in a name conflict,
+the returned future will complete exceptionally.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty">pypgx.api._property.EdgeProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">combine_vertex_properties_into_vector_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">properties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Take a list of scalar vertex properties of same type and create a new vertex vector
+property by combining them.</p>
+<p>The dimension of the vector property will be equals to the number of properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>properties</strong> (<em>List</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>, </em><em>str</em><em>]</em><em>]</em>) – List of scalar vertex properties</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name for the vector property. If not null, vector property
+will be named. If that results in a name conflict, the returned future
+will complete exceptionally.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../api.html#pypgx.api.GraphConfig" title="pypgx.api._graph_config.GraphConfig"><span class="pre">pypgx.api._graph_config.GraphConfig</span></a></em></dt>
+<dd><p>Get the GraphConfig object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_all_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_edge</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create an <cite>AllPaths</cite> object representing all the shortest paths from a single source
+to all the possible destinations (shortest regarding the given edge costs).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a><em>]</em>) – Source vertex of the path</p></li>
+<li><p><strong>cost</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty"><em>pypgx.api._property.EdgeProperty</em></a><em>]</em><em>]</em>) – Property holding the edge costs. If None, the resulting
+cost will equal the hop distance</p></li>
+<li><p><strong>dist</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>, </em><em>str</em><em>]</em>) – Property holding the distance to the source vertex for each vertex in the
+graph</p></li>
+<li><p><strong>parent</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>, </em><em>str</em><em>]</em>) – Property holding the parent vertices of all the shortest paths
+For example, if the shortest path is A -&gt; B -&gt; C, then parent[C] -&gt; B and
+parent[B] -&gt; A</p></li>
+<li><p><strong>parent_edge</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>, </em><em>str</em><em>]</em>) – Property holding the parent edges for each vertex of the shortest path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The <cite>AllPaths</cite> object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.AllPaths" title="pypgx.api._all_paths.AllPaths">pypgx.api._all_paths.AllPaths</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_change_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_id_generation_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'user_ids'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_id_generation_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto_generated'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a change set for updating the graph.</p>
+<p>Uses auto generated IDs for the edges.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is currently not supported for undirected graphs.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an empty change set</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.GraphChangeSet" title="pypgx.api.GraphChangeSet">GraphChangeSet</a></p>
+</dd>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_id_generation_strategy</strong> (<em>str</em>) – </p></li>
+<li><p><strong>edge_id_generation_strategy</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a Partition object holding a collection of vertex sets, one for each component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>components</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>, </em><em>str</em><em>]</em>) – Vertex property mapping each vertex to its component
+ID. Note that only component IDs in the range of
+[0..numComponents-1] are allowed. The returned future will complete
+exceptionally with an IllegalArgumentException if an invalid
+component ID is encountered. Gaps are supported: certain IDs not
+being associated with any vertices will yield to empty components.</p></li>
+<li><p><strong>num_components</strong> (<em>int</em>) – How many different components the components
+property contains</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Partition object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxPartition" title="pypgx.api._partition.PgxPartition">pypgx.api._partition.PgxPartition</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_edge_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a session-bound edge property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Type of the vector property to create</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of vector property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty">pypgx.api._property.EdgeProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_edge_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new edge sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Sequence name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeSequence" title="pypgx.api._pgx_collection.EdgeSequence">pypgx.api._pgx_collection.EdgeSequence</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_edge_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new edge set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Edge set name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeSet" title="pypgx.api._pgx_collection.EdgeSet">pypgx.api._pgx_collection.EdgeSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_edge_vector_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a session-bound vector property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Type of the vector property to create</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – Dimension of vector property to be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of vector property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty">pypgx.api._property.EdgeProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a session-bound map.</p>
+<p>Possible types are:
+[‘integer’,’long’,’double’,’boolean’,’string’,’vertex’,’edge’,
+‘local_date’,’time’,’timestamp’,’time_with_timezone’,’timestamp_with_timezone’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key_type</strong> (<em>str</em>) – Property type of the keys that are going to be stored inside the map</p></li>
+<li><p><strong>val_type</strong> (<em>str</em>) – Property type of the values that are going to be stored inside the map</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Map name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxMap" title="pypgx.api._pgx_map.PgxMap">pypgx.api._pgx_map.PgxMap</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_merging_strategy_builder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create a new <cite>MergingStrategyBuilder</cite> that can be used to build a new <cite>MutationStrategy</cite>
+to simplify this graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.MergingStrategyBuilder" title="pypgx.api._mutation_strategy_builder.MergingStrategyBuilder">pypgx.api._mutation_strategy_builder.MergingStrategyBuilder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_edge</span></span></em><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a>) – Source vertex of the path</p></li>
+<li><p><strong>dst</strong> (<a class="reference internal" href="../api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex"><em>pypgx.api._pgx_entity.PgxVertex</em></a>) – Destination vertex of the path</p></li>
+<li><p><strong>cost</strong> (<a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty"><em>pypgx.api._property.EdgeProperty</em></a>) – Property holding the edge costs. If null, the resulting
+cost will equal the hop distance.</p></li>
+<li><p><strong>parent</strong> (<a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a>) – Property holding the parent vertices for each vertex of
+the shortest path. For example, if the shortest path is A -&gt; B -&gt; C,
+then parent[C] -&gt; B and parent[B] -&gt; A.</p></li>
+<li><p><strong>parent_edge</strong> (<a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a>) – Property holding the parent edges for each vertex of
+the shortest path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The PgxPath object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxPath" title="pypgx.api._pgx_path.PgxPath">pypgx.api._pgx_path.PgxPath</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_picking_strategy_builder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create a new <cite>PickingStrategyBuilder</cite> that can be used to build a new <cite>PickingStrategy</cite>
+to simplify this graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PickingStrategyBuilder" title="pypgx.api._mutation_strategy_builder.PickingStrategyBuilder">pypgx.api._mutation_strategy_builder.PickingStrategyBuilder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new Scalar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Scalar type</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the scalar to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.Scalar" title="pypgx.api._scalar.Scalar">pypgx.api._scalar.Scalar</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_synchronizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synchronizer_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'oracle.pgx.api.FlashbackSynchronizer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invalid_change_policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a synchronizer object which can be used to keep this graph in sync with changes
+happening in its original data source. Only partitioned graphs with all providers loaded
+from Oracle Database are supported.</p>
+<dl class="simple">
+<dt>Possible invalid_change_policy types are: [‘ignore’, ‘ignore_and_log’,</dt><dd><p>‘ignore_and_log_once’, ‘error’]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>synchronizer_class</strong> (<em>str</em>) – string representing java class including package, currently
+‘oracle.pgx.api.FlashbackSynchronize’ is the only existent option</p></li>
+<li><p><strong>connection</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – the connection object to the RDBMS (# TODO : GM-28504)</p></li>
+<li><p><strong>invalid_change_policy</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – sets the <cite>OnInvalidChange</cite> parameter to the Synchronizer
+<cite>ChangeSet</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a synchronizer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.Synchronizer" title="pypgx.api._synchronizer.Synchronizer">pypgx.api._synchronizer.Synchronizer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_vector_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new vertex property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Property type</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the scalar to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.Scalar" title="pypgx.api._scalar.Scalar">pypgx.api._scalar.Scalar</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_vertex_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new vertex property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Property type</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_vertex_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new vertex sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Sequence name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexSequence" title="pypgx.api._pgx_collection.VertexSequence">pypgx.api._pgx_collection.VertexSequence</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_vertex_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new vertex set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Set name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexSet" title="pypgx.api._pgx_collection.VertexSet">pypgx.api._pgx_collection.VertexSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">create_vertex_vector_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a session-bound vertex vector property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Type of the vector property to create</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – Dimension of vector property to be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of vector property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Destroy the graph with all its properties.</p>
+<p>After this operation, neither the graph nor its properties can be used
+anymore within this session.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>if you have multiple <a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api.PgxGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxGraph</span></code></a> objects referencing the same graph
+(e.g. because you called <a class="reference internal" href="../api.html#pypgx.api.PgxSession.get_graph" title="pypgx.api.PgxSession.get_graph"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PgxSession.get_graph()</span></code></a> multiple times with the
+same argument), they will ALL become invalid after calling this method;
+therefore, subsequent operations on ANY of them will result in an exception.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">destroy_edge_property_if_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Destroy a specific edge property if it exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Property name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">destroy_vertex_property_if_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Destroy a specific vertex property if it exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Property name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">execute_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>(BETA) Blocking version of cloneAndExecutePgqlAsync(String).</p>
+<p>Calls cloneAndExecutePgqlAsync(String) and waits for the returned PgxFuture to complete.</p>
+<p>throws InterruptedException if the caller thread gets interrupted while
+waiting for completion.</p>
+<p>throws ExecutionException if any exception occurred during asynchronous
+execution. The actual exception will be nested.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The query result set as PgqlResultSet object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="../api.html#pypgx.api.PgqlResultSet" title="pypgx.api._pgql_result_set.PgqlResultSet">pypgx.api._pgql_result_set.PgqlResultSet</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">explain_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Explain the execution plan of a pattern matching query.</p>
+<p>Note: Different PGX versions may return different execution plans.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The query plan</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pypgx.api._operation.Operation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a subgraph of this graph.</p>
+<p>To create the subgraph, a given filter expression is used to determine
+which parts of the graph will be part of the subgraph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph_filter</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../filters.html#pypgx.api.filters.VertexFilter" title="pypgx.api.filters._graph_filter.VertexFilter"><em>pypgx.api.filters._graph_filter.VertexFilter</em></a><em>, </em><a class="reference internal" href="../filters.html#pypgx.api.filters.EdgeFilter" title="pypgx.api.filters._graph_filter.EdgeFilter"><em>pypgx.api.filters._graph_filter.EdgeFilter</em></a><em>]</em>) – Object representing a filter expression that is
+applied to create the subgraph</p></li>
+<li><p><strong>vertex_properties</strong> (<em>bool</em>) – List of vertex properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>bool</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filtered graph name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_collections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Retrieve all currently allocated collections associated with the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, <a class="reference internal" href="../api.html#pypgx.api.PgxCollection" title="pypgx.api._pgx_collection.PgxCollection">pypgx.api._pgx_collection.PgxCollection</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eid</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get an edge with a specified id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>eid</strong> (<em>int</em>) – edge id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge">pypgx.api._pgx_entity.PgxEdge</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_edge_label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the edge labels belonging to this graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeLabel" title="pypgx.api._property.EdgeLabel">pypgx.api._property.EdgeLabel</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_edge_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the set of edge properties belonging to this graph.</p>
+<p>This list might contain transient, private and published properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty">pypgx.api._property.EdgeProperty</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_edge_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get an edge property by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Property name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Optional[<a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty">pypgx.api._property.EdgeProperty</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_expr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new edge set containing vertices according to the given filter expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filter_expr</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../filters.html#pypgx.api.filters.EdgeFilter" title="pypgx.api.filters._graph_filter.EdgeFilter"><em>pypgx.api.filters._graph_filter.EdgeFilter</em></a><em>]</em><em>]</em>) – EdgeFilter object with the filter expression.
+If None all the vertices are returned.</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the name of the collection to be created.
+If None, a name will be generated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeSet" title="pypgx.api._pgx_collection.EdgeSet">pypgx.api._pgx_collection.EdgeSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the Graph id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A string representation of the id of this graph.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_meta_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the GraphMetaData object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A ‘GraphMetaData’ object of this graph.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.GraphMetaData" title="pypgx.api._graph_meta_data.GraphMetaData">pypgx.api._graph_meta_data.GraphMetaData</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_or_create_edge_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get or create an edge property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Property name</p></li>
+<li><p><strong>data_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Property type</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – Dimension of vector property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty">pypgx.api._property.EdgeProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_or_create_edge_vector_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get or create a session-bound edge property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Type of the vector property to create</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – Dimension of vector property to be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of vector property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty">pypgx.api._property.EdgeProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_or_create_vertex_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get or create a vertex property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Property name</p></li>
+<li><p><strong>data_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Property type</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – Dimension of vector property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_or_create_vertex_vector_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get or create a session-bound vertex vector property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>str</em>) – Type of the vector property to create</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – Dimension of vector property to be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of vector property to be created</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_pgx_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the Graph id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The id of this graph.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api._pgx_id.PgxId" title="pypgx.api._pgx_id.PgxId">pypgx.api._pgx_id.PgxId</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_random_edge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get a edge vertex from the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxEdge" title="pypgx.api._pgx_entity.PgxEdge">pypgx.api._pgx_entity.PgxEdge</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_random_vertex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get a random vertex from the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex">pypgx.api._pgx_entity.PgxVertex</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_redaction_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">authorization_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get the redaction rules for an <cite>authorization_type</cite> name.</p>
+<p>Possible authorization types are: [‘user’, ‘role’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>authorization_type</strong> (<em>str</em>) – the authorization type of the rules to be returned</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the name of the user or role for which the rules should be returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of redaction rules for the given name of type <cite>authorization_type</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../redaction.html#pypgx.api.redaction.PgxRedactionRuleConfig" title="pypgx.api.redaction._redaction_rule_config.PgxRedactionRuleConfig">pypgx.api.redaction._redaction_rule_config.PgxRedactionRuleConfig</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_vertex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vid</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get a vertex with a specified id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vid</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – Vertex id</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pgxVertex object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex">pypgx.api._pgx_entity.PgxVertex</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_vertex_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the vertex labels belonging to this graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.VertexLabels" title="pypgx.api._property.VertexLabels">pypgx.api._property.VertexLabels</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_vertex_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the set of vertex properties belonging to this graph.</p>
+<p>This list might contain transient, private and published properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_vertex_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get a vertex property by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Property name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Optional[<a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty">pypgx.api._property.VertexProperty</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_vertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_expr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a new vertex set containing vertices according to the given filter expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filter_expr</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../filters.html#pypgx.api.filters.VertexFilter" title="pypgx.api.filters._graph_filter.VertexFilter"><em>pypgx.api.filters._graph_filter.VertexFilter</em></a><em>]</em><em>]</em>) – VertexFilter object with the filter expression
+if None all the vertices are returned</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The name of the collection to be created.
+If None, a name will be generated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.VertexSet" title="pypgx.api._pgx_collection.VertexSet">pypgx.api._pgx_collection.VertexSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">grant_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">permission_entity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pgx_resource_permission</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Grant a permission on this graph to the given entity.</p>
+<p>Possible <cite>PGXResourcePermission</cite> types are: [‘none’, ‘read’, ‘write’, ‘export’, ‘manage’]
+Possible <cite>PermissionEntity</cite> objects are: <cite>PgxUser</cite> and <cite>PgxRole</cite>.</p>
+<p>Cannont grant ‘manage’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>permission_entity</strong> (<a class="reference internal" href="../auth.html#pypgx.api.auth.PermissionEntity" title="pypgx.api.auth._permission_entity.PermissionEntity"><em>pypgx.api.auth._permission_entity.PermissionEntity</em></a>) – the entity the rule is granted to</p></li>
+<li><p><strong>pgx_resource_permission</strong> (<em>str</em>) – the permission type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">has_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eid</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Check if the edge with id vid is in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>eid</strong> (<em>int</em>) – Edge id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">has_edge_label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return True if the graph has edge labels, False if not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">has_vertex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vid</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Check if the vertex with id vid is in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vid</strong> (<em>int</em>) – vertex id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">has_vertex_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return True if the graph has vertex labels, False if not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_bipartite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_left</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Check whether a given graph is a bipartite graph.</p>
+<p>A graph is considered a bipartite graph if all nodes can be divided in a ‘left’ and a
+‘right’ side where edges only go from nodes on the ‘left’ side to nodes on the ‘right’
+side.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>is_left</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>, </em><em>str</em><em>]</em>) – Boolean vertex property that - if the method returns true -
+will contain for each node whether it is on the ‘left’ side of the
+bipartite graph. If the method returns False, the content is undefined.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_fresh</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em></dt>
+<dd><p>Check whether an in-memory representation of a graph is fresh.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_pinned</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>For a published graph, indicates if the graph is pinned. A pinned graph will stay
+published even if no session is using it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_published</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em></dt>
+<dd><p>Check if this graph is published with snapshots.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_published_with_snapshots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Check if this graph is published with snapshots.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this graph is published, false otherwise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pgx_instance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../api.html#pypgx.api.ServerInstance" title="pypgx.api._server_instance.ServerInstance"><span class="pre">pypgx.api._server_instance.ServerInstance</span></a></em></dt>
+<dd><p>Get the server instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pick_random_vertex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Select a random vertex from the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The PgxVertex object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxVertex" title="pypgx.api._pgx_entity.PgxVertex">pypgx.api._pgx_entity.PgxVertex</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>For a published graph, pin the graph so that it stays published even if no sessions uses
+it. This call pins the graph lineage, which ensures that at least the latest available
+snapshot stays published when no session uses the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">prepare_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgql_query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Prepare a PGQL query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pgql_query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A prepared statement object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PreparedStatement" title="pypgx.api.PreparedStatement">PreparedStatement</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Publish the graph so it can be shared between sessions.</p>
+<p>This moves the graph name from the private into the public namespace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_properties</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>]</em><em>, </em><em>bool</em><em>]</em><em>]</em>) – List of vertex properties belonging to graph
+specified to be published as well</p></li>
+<li><p><strong>edge_properties</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty"><em>pypgx.api._property.EdgeProperty</em></a><em>]</em><em>, </em><em>bool</em><em>]</em><em>]</em>) – List of edge properties belonging to graph
+specified by graph to be published as well</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">publish_with_snapshots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Publish the graph and all its snapshots so they can be shared between sessions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">query_pgql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Submit a pattern matching select only query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>query</strong> (<em>str</em>) – Query string in PGQL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgqlResultSet with the result</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../api.html#pypgx.api.PgqlResultSet" title="pypgx.api._pgql_result_set.PgqlResultSet">pypgx.api._pgql_result_set.PgqlResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">remove_redaction_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">redaction_rule_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authorization_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Remove a redaction rule for <cite>authorization_type</cite> names.</p>
+<p>Possible authorization types are: [‘user’, ‘role’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>authorization_type</strong> (<em>str</em>) – the authorization type of the rule to be removed</p></li>
+<li><p><strong>names</strong> (<em>str</em>) – the names of the users or roles for which the rule should be removed</p></li>
+<li><p><strong>redaction_rule_config</strong> (<a class="reference internal" href="../redaction.html#pypgx.api.redaction.PgxRedactionRuleConfig" title="pypgx.api.redaction._redaction_rule_config.PgxRedactionRuleConfig"><em>pypgx.api.redaction._redaction_rule_config.PgxRedactionRuleConfig</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Rename this graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – New name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">revoke_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">permission_entity</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Revoke all permissions on this graph from the given entity.</p>
+<p>Possible <cite>PermissionEntity</cite> objects are: <cite>PgxUser</cite> and <cite>PgxRole</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>permission_entity</strong> (<a class="reference internal" href="../auth.html#pypgx.api.auth.PermissionEntity" title="pypgx.api.auth._permission_entity.PermissionEntity"><em>pypgx.api.auth._permission_entity.PermissionEntity</em></a>) – the entity for which all permissions will be revoked</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_multi_edges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_self_edges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_trivial_vertices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a simplified version of a graph.</p>
+<p>Note that the returned graph and properties are transient and therefore
+session bound. They can be explicitly destroyed and get automatically
+freed once the session dies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_properties</strong> (<em>Union</em><em>[</em><em>bool</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>]</em><em>]</em>) – List of vertex properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>Union</em><em>[</em><em>bool</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty"><em>pypgx.api._property.EdgeProperty</em></a><em>]</em><em>]</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>keep_multi_edges</strong> (<em>bool</em>) – Defines if multi-edges should be kept in the
+result</p></li>
+<li><p><strong>keep_self_edges</strong> (<em>bool</em>) – Defines if self-edges should be kept in the
+result</p></li>
+<li><p><strong>keep_trivial_vertices</strong> (<em>bool</em>) – Defines if isolated nodes should be kept
+in the result</p></li>
+<li><p><strong>in_place</strong> (<em>bool</em>) – If the operation should be done in place of if a new
+graph has to be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – New graph name. If None, a name will be generated.
+Only relevant if a new graph is to be created.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">simplify_with_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mutation_strategy</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a simplified version of a graph using a custom mutation strategy.</p>
+<p>Note that the returned graph and properties are transient and therefore
+session bound. They can be explicitly destroyed and get automatically
+freed once the session dies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mutation_strategy</strong> (<em>pypgx.api._mutation_strategy.MutationStrategy</em>) – Defines a custom strategy for dealing with multi-edges.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sort_by_degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a sorted version of a graph and all its properties.</p>
+<p>The returned graph is sorted such that the node numbering is ordered by
+the degree of the nodes. Note that the returned graph and properties
+are transient.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_properties</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>]</em><em>, </em><em>bool</em><em>]</em>) – List of vertex properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty"><em>pypgx.api._property.EdgeProperty</em></a><em>]</em><em>, </em><em>bool</em><em>]</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>ascending</strong> (<em>bool</em>) – Sorting order</p></li>
+<li><p><strong>in_degree</strong> (<em>bool</em>) – If in_degree should be used for sorting. Otherwise use out degree.</p></li>
+<li><p><strong>in_place</strong> (<em>bool</em>) – If the sorting should be done in place or a new graph should be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – New graph name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sparsify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sparsification</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Sparsify the given graph and returns a new graph with less edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sparsification</strong> (<em>float</em>) – The sparsification coefficient. Must be between
+0.0 and 1.0..</p></li>
+<li><p><strong>vertex_properties</strong> (<em>bool</em>) – List of vertex properties belonging to
+graph specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>bool</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filtered graph name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_partitions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Store graph in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> (<em>str</em>) – One of [‘pgb’, ‘edge_list’, ‘two_tables’, ‘adj_list’,
+‘flat_file’, ‘graphml’, ‘pg’, ‘rdf’, ‘csv’]</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Path to which graph will be stored</p></li>
+<li><p><strong>num_partitions</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The number of partitions that should be
+created, when exporting to multiple files</p></li>
+<li><p><strong>vertex_properties</strong> (<em>bool</em>) – The collection of vertex properties to store
+together with the graph data. If not specified all the vertex
+properties are stored</p></li>
+<li><p><strong>edge_properties</strong> (<em>bool</em>) – The collection of edge properties to store
+together with the graph data. If not specified all the vertex
+properties are stored</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Overwrite if existing</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.GraphConfig" title="pypgx.api._graph_config.GraphConfig">pypgx.api._graph_config.GraphConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_label_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a transpose of this graph.</p>
+<p>A transpose of a directed graph is another directed graph on the same
+set of vertices with all of the edges reversed. If this graph contains
+an edge (u,v) then the return graph will contain an edge (v,u) and vice
+versa. If this graph is undirected (isDirected() returns false), this
+operation has no effect and will either return a copy or act as
+identity function depending on the mode parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_properties</strong> (<em>bool</em>) – List of vertex properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>bool</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>edge_label_mapping</strong> (<em>Optional</em><em>[</em><em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – Can be used to rename edge labels.
+For example, an edge (John,Mary) labeled “fatherOf” can be transformed
+to be labeled “hasFather” on the transpose graph’s edge (Mary,John)
+by passing in a dict like object {“fatherOf”:”hasFather”}.</p></li>
+<li><p><strong>in_place</strong> (<em>bool</em>) – If the transpose should be done in place or a new
+graph should be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – New graph name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">undirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_multi_edges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_self_edges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_trivial_vertices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_place</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create an undirected version of the graph.</p>
+<p>An undirected graph has some restrictions. Some algorithms are only supported on directed
+graphs or are not yet supported for undirected graphs. Further, PGX does not support
+storing undirected graphs nor reading from undirected formats. Since the edges do not have a
+direction anymore, the behavior of <cite>pgxEdge.source()</cite> or <cite>pgxEdge.destination()</cite> can be
+ambiguous. In order to provide deterministic results, PGX will always return the vertex
+with the smaller internal id as source and the other as destination vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex_properties</strong> (<em>Union</em><em>[</em><em>bool</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.VertexProperty" title="pypgx.api._property.VertexProperty"><em>pypgx.api._property.VertexProperty</em></a><em>]</em><em>]</em>) – List of vertex properties belonging to
+graph specified to be kept in the new graph</p></li>
+<li><p><strong>edge_properties</strong> (<em>Union</em><em>[</em><em>bool</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="../api.html#pypgx.api.EdgeProperty" title="pypgx.api._property.EdgeProperty"><em>pypgx.api._property.EdgeProperty</em></a><em>]</em><em>]</em>) – List of edge properties belonging to graph
+specified to be kept in the new graph</p></li>
+<li><p><strong>keep_multi_edges</strong> (<em>bool</em>) – Defines if multi-edges should be kept in the
+result</p></li>
+<li><p><strong>keep_self_edges</strong> (<em>bool</em>) – Defines if self-edges should be kept in the
+result</p></li>
+<li><p><strong>keep_trivial_vertices</strong> (<em>bool</em>) – Defines if isolated nodes should be kept
+in the result</p></li>
+<li><p><strong>in_place</strong> (<em>bool</em>) – If the operation should be done in place of if a new
+graph has to be created</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – New graph name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">undirect_with_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mutation_strategy</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create an undirected version of the graph using a custom mutation strategy.</p>
+<p>An undirected graph has some restrictions. Some algorithms are only supported on directed
+graphs or are not yet supported for undirected graphs. Further, PGX does not support
+storing undirected graphs nor reading from undirected formats. Since the edges do not have a
+direction anymore, the behavior of <cite>pgxEdge.source()</cite> or <cite>pgxEdge.destination()</cite> can be
+ambiguous. In order to provide deterministic results, PGX will always return the vertex
+with the smaller internal id as source and the other as destination vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mutation_strategy</strong> (<em>pypgx.api._mutation_strategy.MutationStrategy</em>) – Defines a custom strategy for dealing with multi-edges.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../api.html#pypgx.api.PgxGraph" title="pypgx.api._pgx_graph.PgxGraph">pypgx.api._pgx_graph.PgxGraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">unpin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>For a published graph, unpin the graph so that if no snapshot of the graph is used by
+any session or pinned, the graph and all its snapshots can be removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="graph_algorithms.html" class="btn btn-neutral float-right" title="5. Graph algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="session_management.html" class="btn btn-neutral float-left" title="3. Managing Sessions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1952 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Frames &mdash; OPG4Py 22.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Redaction" href="redaction.html" />
+    <link rel="prev" title="Graph Filters" href="filters.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OPG4Py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index_tables.html">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opg4py/detailed/index.html">Using OPG4Py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opg4py/index.html">OPG4Py package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailed/index.html">Using PyPGX</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PyPGX package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="top_level.html">Top level package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">API package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.html">MLlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">Authorization and Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filters.html">Graph Filters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redaction.html">Redaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pg_rdbms.html">Graph Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OPG4Py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">PyPGX package</a> &raquo;</li>
+        
+      <li>Frames</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/pypgx/frames.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pypgx.api.frames">
+<span id="frames"></span><span id="api-frames"></span><h1>Frames<a class="headerlink" href="#module-pypgx.api.frames" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">PgxFrame</span></code> and other classes related to frames.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxCsvFrameReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_csv_frame_reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for reading <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> objects from CSV files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader.auto_detect_columns">
+<span class="sig-name descname"><span class="pre">auto_detect_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_detect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader.auto_detect_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the autodetection of columns from the table.</p>
+<p>Executing this function clears the currently loaded column descriptors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auto_detect</strong> (<em>bool</em>) – True if the columns should be autodetected, False otherwise</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader">pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader.clear_columns">
+<span class="sig-name descname"><span class="pre">clear_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader.clear_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the current configuration of which columns should be loaded and how.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_descriptors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the columns to be loaded from their columnDescriptors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column_descriptors</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader">pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from the provided URIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>str</em>) – the URIs from which to load the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader.load_async">
+<span class="sig-name descname"><span class="pre">load_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader.load_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from the provided URIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>str</em>) – the URIs from which to load the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – New name for the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader">pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameReader.separator">
+<span class="sig-name descname"><span class="pre">separator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameReader.separator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the separator for CSV parsing to <cite>sep</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sep</strong> (<em>str</em>) – char denoting the separator</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader">pypgx.api.frames._pgx_frame_reader.PgxCsvFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxCsvFrameStorer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_csv_frame_storer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for configuring the storing operation of a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> to a CSV file
+and then triggering it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.clear_columns">
+<span class="sig-name descname"><span class="pre">clear_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.clear_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear columns</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_descriptors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set columns</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column_descriptors</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – frame name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.overwrite">
+<span class="sig-name descname"><span class="pre">overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overwrite_bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.overwrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set overwrite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>overwrite_bool</strong> (<em>bool</em>) – denotes if the table should be overwritten.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.partition_extension">
+<span class="sig-name descname"><span class="pre">partition_extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_extension</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.partition_extension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the fileExtension of the created CSV files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_extension</strong> (<em>str</em>) – string denoting the file extension for the created files.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.partitions">
+<span class="sig-name descname"><span class="pre">partitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_partitions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.partitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of files to be created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num_partitions</strong> (<em>int</em>) – number of partitions created.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.separator">
+<span class="sig-name descname"><span class="pre">separator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.separator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the separator for CSV file to <cite>sep</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sep</strong> (<em>str</em>) – char denoting the separator</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store PgxFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame instance</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.store_async">
+<span class="sig-name descname"><span class="pre">store_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.store_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store PgxFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxCsvFrameStorer.table_name">
+<span class="sig-name descname"><span class="pre">table_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxCsvFrameStorer.table_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the table name in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>table_name</strong> (<em>str</em>) – nodes table name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxDbFrameReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_db_frame_reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for reading <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> objects from a database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.auto_detect_columns">
+<span class="sig-name descname"><span class="pre">auto_detect_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_detect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.auto_detect_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the autodetection of columns from the table.</p>
+<p>Executing this function clears the currently loaded column descriptors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auto_detect</strong> (<em>bool</em>) – True if the columns should be autodetected, False otherwise</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.clear_columns">
+<span class="sig-name descname"><span class="pre">clear_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.clear_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the current configuration of which columns should be loaded and how.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_descriptors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the columns to be loaded from their columnDescriptors.</p>
+<p>Executing this function disables autodetection of columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column_descriptors</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.connections">
+<span class="sig-name descname"><span class="pre">connections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connections</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.connections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of connections to read/write data from/to the database provider</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>connections</strong> (<em>int</em>) – number of connections</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.data_source_id">
+<span class="sig-name descname"><span class="pre">data_source_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the datasource ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data_source_id</strong> (<em>str</em>) – the datasource ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.jdbc_url">
+<span class="sig-name descname"><span class="pre">jdbc_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jdbc_url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.jdbc_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the jdbc URL to use for connecting to the DB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>jdbc_url</strong> – the jdbc URL</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.keystore_alias">
+<span class="sig-name descname"><span class="pre">keystore_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keystore_alias</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.keystore_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the keystore alias.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keystore_alias</strong> – the keystore alias.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> – the URIs from which to load the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.load_async">
+<span class="sig-name descname"><span class="pre">load_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.load_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> – the URIs from which to load the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – New name for the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.owner">
+<span class="sig-name descname"><span class="pre">owner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">owner</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the owner of the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>owner</strong> (<em>str</em>) – the owner</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.password">
+<span class="sig-name descname"><span class="pre">password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the password of the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>str</em>) – the password</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.schema">
+<span class="sig-name descname"><span class="pre">schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema of the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>schema</strong> (<em>str</em>) – the schema.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.table_name">
+<span class="sig-name descname"><span class="pre">table_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.table_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the table name in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>table_name</strong> (<em>str</em>) – nodes table name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameReader.username">
+<span class="sig-name descname"><span class="pre">username</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameReader.username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the username of the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>username</strong> (<em>str</em>) – username</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxDbFrameStorer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_db_frame_storer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for configuring the storing operation of a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> to a database
+and then triggering it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.clear_columns">
+<span class="sig-name descname"><span class="pre">clear_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.clear_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear columns</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>self</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_descriptors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set columns</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column_descriptors</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.connections">
+<span class="sig-name descname"><span class="pre">connections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connections</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.connections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of connections to read/write data from/to the database provider</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>connections</strong> (<em>int</em>) – number of connections</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.data_source_id">
+<span class="sig-name descname"><span class="pre">data_source_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the datasource ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data_source_id</strong> (<em>str</em>) – the datasource ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.jdbc_url">
+<span class="sig-name descname"><span class="pre">jdbc_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jdbc_url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.jdbc_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set jdbc url</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>jdbc_url</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.keystore_alias">
+<span class="sig-name descname"><span class="pre">keystore_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keystore_alias</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.keystore_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the keystore alias.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keystore_alias</strong> (<em>str</em>) – the keystore alias.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – frame name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.overwrite">
+<span class="sig-name descname"><span class="pre">overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overwrite_bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.overwrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set overwrite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>overwrite_bool</strong> (<em>bool</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.owner">
+<span class="sig-name descname"><span class="pre">owner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">owner</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the owner of the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>owner</strong> (<em>str</em>) – the owner</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.password">
+<span class="sig-name descname"><span class="pre">password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the password of the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>str</em>) – the password</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.schema">
+<span class="sig-name descname"><span class="pre">schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the schema of the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>schema</strong> (<em>str</em>) – the schema.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.store_async">
+<span class="sig-name descname"><span class="pre">store_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.store_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.table_name">
+<span class="sig-name descname"><span class="pre">table_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.table_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the table name in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>table_name</strong> (<em>str</em>) – nodes table name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxDbFrameStorer.username">
+<span class="sig-name descname"><span class="pre">username</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxDbFrameStorer.username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the username of the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>username</strong> (<em>str</em>) – username</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api._pgx_context_manager.PgxContextManager</span></code></p>
+<p>Data-structure to load/store and manipulate tabular data.</p>
+<p>It contains rows and columns. A PgxFrame can contain multiple columns where each column
+consist of elements of the same data type, and has a name. The list of the columns
+with their names and data types defines the schema of the frame.
+(The number of rows in the PgxFrame is not part of the schema of the frame.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new PgxFrame with the same content as the current frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free resources on the server taken up by this frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pypgx.api.frames.PgxFrame.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the names of the columns contained in the PgxFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count number of elements in the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free resources on the server taken up by this frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.flatten">
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new PgxFrame with all the specified columns and vector columns flattened into
+multiple columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>str</em>) – Column names</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.flatten_all">
+<span class="sig-name descname"><span class="pre">flatten_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.flatten_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new PgxFrame with all nested columns and vector columns flattened into multiple
+columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.get_column">
+<span class="sig-name descname"><span class="pre">get_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.get_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a PgxFrameColumn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Column name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrameColumn</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrameColumn" title="pypgx.api.frames._pgx_frame.PgxFrameColumn">pypgx.api.frames._pgx_frame.PgxFrameColumn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.get_column_descriptors">
+<span class="sig-name descname"><span class="pre">get_column_descriptors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.get_column_descriptors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list containing the description of the different columns of the frames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Tuple[str, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.head">
+<span class="sig-name descname"><span class="pre">head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first num_rows elements of the frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_rows</strong> (<em>int</em>) – Number of rows to take</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_key_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_join_key_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_join_key_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new PgxFrame by performing a join operation.</p>
+<blockquote>
+<div><p>Create a new PgxFrame by adding the columns of the right frame to this frame, aligned on
+equality of entries in column left_join_key_column for this frame and column
+right_join_key_column for the right frame, or join_key_columns on both frames. The
+resulting frame will contain the columns of this frame prefixed by left_prefix and the
+columns of right frame prefixed by right_prefix (if the prefixes are not null). Prefixes
+must ether not be set or both be set.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>right</strong> (<a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><em>pypgx.api.frames._pgx_frame.PgxFrame</em></a>) – PgxFrame whose columns will be added to the columns of this PgxFrame</p></li>
+<li><p><strong>join_key_column</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Column of both frames on which the equality test will be performed</p></li>
+<li><p><strong>left_join_key_column</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Column of this frame on which the equality test will be
+performed with right_join_key_column</p></li>
+<li><p><strong>right_join_key_column</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Column of right frame on which the equality test will be
+performed with leftJoinKeyColumn</p></li>
+<li><p><strong>left_prefix</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Prefix of the columns name of this frame in the resulting frame</p></li>
+<li><p><strong>right_prefix</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Prefix of the columns name of right frame in the resulting frame</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.length">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pypgx.api.frames.PgxFrame.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of rows in the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of rows</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> (<em>Optional</em><em>[</em><em>TextIO</em><em>]</em>) – File to which results are printed (default is <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>)</p></li>
+<li><p><strong>num_results</strong> (<em>int</em>) – Number of results to be printed</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – Index of the first result to be printed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.rename_column">
+<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.rename_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a PgxFrame with the column name modified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>old_column_name</strong> (<em>str</em>) – name of the column to rename</p></li>
+<li><p><strong>new_column_name</strong> (<em>str</em>) – name of the column after the operation</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.rename_columns">
+<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_renaming</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.rename_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a PgxFrame with the column name modified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_renaming</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – dict-like holding old_column names as keys and new column names as
+values</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select multiple columns by column name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>str</em>) – Column names</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the frame in a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path where to store the frame</p></li>
+<li><p><strong>file_format</strong> (<em>str</em>) – Storage format</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Overwrite current file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.tail">
+<span class="sig-name descname"><span class="pre">tail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.tail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the last num_rows elements of the frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_rows</strong> (<em>int</em>) – Number of rows to take</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.to_pandas">
+<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.to_pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert to pandas DataFrame.</p>
+<p>This method may change result_set cursor.</p>
+<p>This method requires pandas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame as a Pandas Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.to_pgql_result_set">
+<span class="sig-name descname"><span class="pre">to_pgql_result_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.to_pgql_result_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new PgqlResultSet having the same content as this frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgqlResultSet</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#pypgx.api.PgqlResultSet" title="pypgx.api._pgql_result_set.PgqlResultSet">pypgx.api._pgql_result_set.PgqlResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.union">
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a PgxFrame by concatenating the rows of this frame with the rows of the
+frames in frames. The different frames should have the same columns (same names, types and
+dimensions), in the same order. The resulting frame is not guaranteed to have any specific
+ordering of its rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frames</strong> (<a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame"><em>pypgx.api.frames._pgx_frame.PgxFrame</em></a>) – Frames tu add through union</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em>) – Apply the changes inplace and return self</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrame.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrame.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Pgx Frame storer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxGenericFrameStorer</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.frames.PgxGenericFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrameBuilder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxFrameBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_frame_builder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrameBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A frame builder for constructing a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrameBuilder.add_rows">
+<span class="sig-name descname"><span class="pre">add_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrameBuilder.add_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the data to the frame builder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the column data in a dictionary</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrameBuilder" title="pypgx.api.frames._pgx_frame_builder.PgxFrameBuilder">pypgx.api.frames._pgx_frame_builder.PgxFrameBuilder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrameBuilder.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrameBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the frame with the given frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – the name of the frame to create</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the newly frame created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrameColumn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxFrameColumn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_frame_column</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrameColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pypgx.api._pgx_context_manager.PgxContextManager</span></code></p>
+<p>Class representing one column of a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrameColumn.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrameColumn.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free resources on the server taken up by this column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxFrameColumn.get_descriptor">
+<span class="sig-name descname"><span class="pre">get_descriptor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxFrameColumn.get_descriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a description of the column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[str, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxGenericFrameReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_generic_frame_reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A generic class for reading <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> objects from various sources.</p>
+<p>The class allows configuration of how the data should be read and
+facilitates the creation of specialized frame readers
+(<a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames.PgxCsvFrameReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxCsvFrameReader</span></code></a> and <a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameReader" title="pypgx.api.frames.PgxPgbFrameReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxPgbFrameReader</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.auto_detect_columns">
+<span class="sig-name descname"><span class="pre">auto_detect_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_detect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.auto_detect_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the autodetection of columns from the table.</p>
+<p>Not all formats support autodetection of the columns (only DB in fact).</p>
+<p>Executing this function clears the currently loaded column descriptors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auto_detect</strong> (<em>bool</em>) – True if the columns should be autodetected, False otherwise</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxGenericFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader">pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.clear_columns">
+<span class="sig-name descname"><span class="pre">clear_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.clear_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the current configuration of which columns should be loaded and how.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_descriptors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the columns to be loaded from their columnDescriptors.</p>
+<p>Executing this function disables autodetection of columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column_descriptors</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxGenericFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader">pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.csv">
+<span class="sig-name descname"><span class="pre">csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames.PgxCsvFrameReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxCsvFrameReader</span></code></a> object for loading CSV files from URIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – List of paths to the csv files</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames.PgxCsvFrameReader">PgxCsvFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.csv_async">
+<span class="sig-name descname"><span class="pre">csv_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.csv_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from a list of URIs to CSV files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>str</em>) – list denoting the URIs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the read frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.db">
+<span class="sig-name descname"><span class="pre">db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames.PgxDbFrameReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxDbFrameReader</span></code></a> object to load <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from a database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameReader" title="pypgx.api.frames.PgxDbFrameReader">PgxDbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a frame reader for the type format specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>format</strong> (<em>str</em>) – format to be loaded</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a loader for the format</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameReader" title="pypgx.api.frames.PgxCsvFrameReader">PgxCsvFrameReader</a> or <a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameReader" title="pypgx.api.frames.PgxPgbFrameReader">PgxPgbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – New name for the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxGenericFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader">pypgx.api.frames._pgx_frame_reader.PgxGenericFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.pgb">
+<span class="sig-name descname"><span class="pre">pgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.pgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameReader" title="pypgx.api.frames.PgxPgbFrameReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxPgbFrameReader</span></code></a> object for loading PGB files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – List of paths to the PGB files</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameReader" title="pypgx.api.frames.PgxPgbFrameReader">PgxPgbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameReader.pgb_async">
+<span class="sig-name descname"><span class="pre">pgb_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameReader.pgb_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from a list of URIs to PGB files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>str</em>) – list denoting the URIs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the read frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameStorer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxGenericFrameStorer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_generic_frame_storer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameStorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for configuring the storing operation of a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> and then triggering it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameStorer.csv">
+<span class="sig-name descname"><span class="pre">csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameStorer.csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a <a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames.PgxCsvFrameStorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxCsvFrameStorer</span></code></a> instance for the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames.PgxCsvFrameStorer">PgxCsvFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameStorer.db">
+<span class="sig-name descname"><span class="pre">db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameStorer.db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a <a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames.PgxDbFrameStorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxDbFrameStorer</span></code></a> instance for the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames.PgxDbFrameStorer">PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameStorer.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameStorer.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a specialized frame storer for saving the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> in a given format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>format</strong> (<em>str</em>) – identifier of the wanted format.
+Can be one of ‘csv’, ‘pgb’ or ‘db’ (case insensitive)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pypgx.api.frames.PgxCsvFrameStorer" title="pypgx.api.frames.PgxCsvFrameStorer">PgxCsvFrameStorer</a>, <a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameStorer" title="pypgx.api.frames.PgxPgbFrameStorer">PgxPgbFrameStorer</a> or <a class="reference internal" href="#pypgx.api.frames.PgxDbFrameStorer" title="pypgx.api.frames.PgxDbFrameStorer">PgxDbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameStorer.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameStorer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the name of the stored frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – the new frame name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxGenericFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameStorer.overwrite">
+<span class="sig-name descname"><span class="pre">overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overwrite_bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameStorer.overwrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set overwrite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>overwrite_bool</strong> (<em>bool</em>) – denotes if the table should be overwritten.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxGenericFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxGenericFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxGenericFrameStorer.pgb">
+<span class="sig-name descname"><span class="pre">pgb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxGenericFrameStorer.pgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a <a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameStorer" title="pypgx.api.frames.PgxPgbFrameStorer"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxPgbFrameStorer</span></code></a> instance for the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameStorer" title="pypgx.api.frames.PgxPgbFrameStorer">PgxPgbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxPgbFrameReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_pgb_frame_reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for reading <cite>PgxFrame</cite> objects from PGB files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameReader.auto_detect_columns">
+<span class="sig-name descname"><span class="pre">auto_detect_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_detect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameReader.auto_detect_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the autodetection of columns from the table.</p>
+<p>Executing this function clears the currently loaded column descriptors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auto_detect</strong> (<em>bool</em>) – True if the columns should be autodetected, False otherwise</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxPgbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxPgbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameReader.clear_columns">
+<span class="sig-name descname"><span class="pre">clear_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameReader.clear_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the current configuration of which columns should be loaded and how.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameReader.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_descriptors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameReader.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the columns to be loaded from their columnDescriptors.</p>
+<p>Executing this function disables autodetection of columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column_descriptors</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – List of tuples (columnName, columnType)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxPgbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxPgbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameReader.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameReader.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from the provided URIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>str</em>) – the URIs from which to load the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames._pgx_frame.PgxFrame">pypgx.api.frames._pgx_frame.PgxFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameReader.load_async">
+<span class="sig-name descname"><span class="pre">load_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uris</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameReader.load_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> from the provided URIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uris</strong> (<em>str</em>) – the URIs from which to load the frame</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PgxFrame instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameReader.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameReader.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – New name for the <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameReader" title="pypgx.api.frames._pgx_frame_reader.PgxPgbFrameReader">pypgx.api.frames._pgx_frame_reader.PgxPgbFrameReader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameStorer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypgx.api.frames.</span></span><span class="sig-name descname"><span class="pre">PgxPgbFrameStorer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_pgx_pgb_frame_storer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameStorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for configuring the storing operation of a <a class="reference internal" href="#pypgx.api.frames.PgxFrame" title="pypgx.api.frames.PgxFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">PgxFrame</span></code></a> to a PGB file
+and then triggering it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameStorer.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameStorer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the frame name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame_name</strong> (<em>str</em>) – frame name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>this storer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxPgbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxPgbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameStorer.overwrite">
+<span class="sig-name descname"><span class="pre">overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overwrite_bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameStorer.overwrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set overwrite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>overwrite_bool</strong> (<em>bool</em>) – denotes if the table should be overwritten.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pypgx.api.frames.PgxPgbFrameStorer" title="pypgx.api.frames._pgx_frame_storer.PgxPgbFrameStorer">pypgx.api.frames._pgx_frame_storer.PgxPgbFrameStorer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameStorer.store">
+<span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameStorer.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store PgxFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame instance</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypgx.api.frames.PgxPgbFrameStorer.store_async">
+<span class="sig-name descname"><span class="pre">store_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypgx.api.frames.PgxPgbFrameStorer.store_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store PgxFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PgxFrame instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="redaction.html" class="btn btn-neutral float-right" title="Redaction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="filters.html" class="btn btn-neutral float-left" title="Graph Filters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Oracle.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

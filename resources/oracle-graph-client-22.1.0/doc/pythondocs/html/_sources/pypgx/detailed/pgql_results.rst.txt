@@ -1,0 +1,10 @@
+Using PGQL results
+==================
+
+Retrieving results after executing a PGQL query can be done using the following methods of the PgqlResultSet class.
+
+Please note that this functionality is different from the one included in OPG4Py package. For more details look into the `PGQL documentation <https://pgql-lang.org/spec/1.4/>`_.
+
+.. autoclass:: pypgx.api.PgqlResultSet
+   :members:
+   :noindex:

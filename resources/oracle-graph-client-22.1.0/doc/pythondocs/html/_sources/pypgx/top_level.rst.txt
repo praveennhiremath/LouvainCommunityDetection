@@ -1,0 +1,6 @@
+Top level package
+===================
+
+.. automodule:: pypgx
+   :members:
+   :show-inheritance:

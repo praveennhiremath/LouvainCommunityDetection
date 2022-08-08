@@ -1,0 +1,7 @@
+Authorization and Permissions
+=============================
+
+.. automodule:: pypgx.api.auth
+   :members:
+   :show-inheritance:
+   :inherited-members:

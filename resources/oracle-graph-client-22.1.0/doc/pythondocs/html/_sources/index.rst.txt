@@ -1,0 +1,102 @@
+.. opg4py documentation master file, created by
+   sphinx-quickstart on Tue Jun  2 19:37:26 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+.. Copyright (C) 2013 - 2022 Oracle and/or its affiliates. All rights reserved.
+
+Welcome to OPG4Py 22.1.0 documentation!
+===============================================
+
+
+Example application
+===================
+
+Create a python app `python_app.py` with the following content::
+
+   import sys
+
+   jdbc_url = sys.argv[1]
+   base_url = sys.argv[2]
+   username = sys.argv[3]
+   password = sys.argv[4]
+
+
+   # 2 tier example: run PGQL against database
+   import opg4py
+
+   pgql_connection = opg4py.pgql.get_connection(username, password, jdbc_url)
+   pgql_statement = pgql_connection.create_statement()
+
+   create_graph = "CREATE PROPERTY GRAPH hr_simplified VERTEX TABLES (employees LABEL employee PROPERTIES ARE ALL COLUMNS EXCEPT ( job_id, manager_id, department_id ), departments LABEL department PROPERTIES ( department_id, department_name )) EDGE TABLES ( employees AS works_for SOURCE KEY ( employee_id ) REFERENCES employees DESTINATION employees NO PROPERTIES)"
+
+   pgql_statement.execute(create_graph)
+   pgql_connection.set_graph("hr_simplified")
+
+   query = "SELECT label(n) AS srcLbl, label(e) AS edgeLbl, label(m) AS dstLbl, COUNT(*) FROM MATCH (n) -[e]-> (m) GROUP BY srcLbl, edgeLbl, dstLbl ORDER BY COUNT(*) DESC"
+
+   pgql_result_set = pgql_statement.execute_query(query)
+   pgql_result_set.print()
+   drop_graph = "DROP PROPERTY GRAPH hr_simplified"
+   pgql_statement.execute(drop_graph)
+
+   pgql_result_set.close()
+   pgql_statement.close()
+   pgql_connection.close()
+
+
+   # 3-tier example: connect to PGX
+   import pypgx as pgx
+   import pypgx.pg.rdbms.graph_server as graph_server
+
+   instance = graph_server.get_instance(base_url, username, password)
+   session = instance.create_session("pypgx_example_session")
+   graph = session.create_graph_builder().add_edge(1, 2).add_edge(2, 3).add_edge(3, 1).build()
+   analyst = session.create_analyst()
+
+   triangles = analyst.count_triangles(graph, True)
+   print("triangles = {}".format(triangles))
+
+   rs = graph.query_pgql("select x, y, e from match (x) -[e]-> (y)")
+   rs.print()
+
+   session.close()
+
+Start the Graph Server
+======================
+
+Configure and start the graph server to which the example application can connect to. Follow the steps in the `product documentation <https://docs.oracle.com/en/database/oracle/property-graph/21.3/spgdg/property-graph-overview-spgdg.html>`_.
+
+Test the application
+====================
+
+Test the app using the following instruction, replacing <connect-string>, <hostname>, <username> and <password> with values matching your database and graph server installation::
+
+   python3 python_app.py "<connect-string>" "https://<hostname>:7007" "<username>" "<password>"
+
+You should see an output like this::
+
+   +--------------------------------------------+
+   | SRCLBL   | EDGELBL   | DSTLBL   | COUNT(*) |
+   +--------------------------------------------+
+   | EMPLOYEE | WORKS_FOR | EMPLOYEE | 106      |
+   +--------------------------------------------+
+
+   triangles = 1
+
+   +---------------------------------------------------+
+   | x               | y               | e             |
+   +---------------------------------------------------+
+   | PgxVertex[ID=1] | PgxVertex[ID=2] | PgxEdge[ID=0] |
+   | PgxVertex[ID=2] | PgxVertex[ID=3] | PgxEdge[ID=1] |
+   | PgxVertex[ID=3] | PgxVertex[ID=1] | PgxEdge[ID=2] |
+   +---------------------------------------------------+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API Reference
+
+   index_tables
+   opg4py/detailed/index
+   opg4py/index
+   pypgx/detailed/index
+   pypgx/index

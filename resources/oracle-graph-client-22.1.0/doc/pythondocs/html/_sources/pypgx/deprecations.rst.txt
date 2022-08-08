@@ -1,0 +1,22 @@
+Deprecations
+===================
+
+The following classes were moved to :ref:`api.filter <api-filters>` in version 21.4:
+
+* ``EdgeFilter``
+* ``GraphFilter``
+* ``VertexFilter``
+
+The following classes were moved to :ref:`api.frames <api-frames>` in version 21.4:
+
+* ``PgxCsvFrameReader``
+* ``PgxCsvFrameStorer``
+* ``PgxDbFrameReader``
+* ``PgxDbFrameStorer``
+* ``PgxFrame``
+* ``PgxFrameBuilder``
+* ``PgxFrameColumn``
+* ``PgxGenericFrameReader``
+* ``PgxGenericFrameStorer``
+* ``PgxPgbFrameReader``
+* ``PgxPgbFrameStorer``

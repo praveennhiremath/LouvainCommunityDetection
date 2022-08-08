@@ -1,0 +1,9 @@
+Metadata-Version: 1.2
+Name: pypgx
+Version: 22.1.1
+Summary: PyPGX
+Home-page: PGX
+License: OTN
+Description: PyPGX
+Platform: Linux x86_64
+Requires-Python: >=3.6

@@ -1,0 +1,38 @@
+API package
+===================
+
+.. automodule:: pypgx.api
+   :members:
+   :show-inheritance:
+   :exclude-members: VertexProperty, EdgeProperty,
+      VertexLabels, EdgeLabel
+
+.. autoclass:: pypgx.api.VertexProperty
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+.. autoclass:: pypgx.api.EdgeProperty
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+.. autoclass:: pypgx.api.VertexLabels
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+.. autoclass:: pypgx.api.EdgeLabel
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+.. autoclass:: pypgx.api._pgx_id.PgxId
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+.. autoclass:: pypgx.api._version_info.VersionInfo
+   :members:
+   :show-inheritance:
+   :undoc-members:
